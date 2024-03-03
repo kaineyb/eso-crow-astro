@@ -1,0 +1,20 @@
+---
+
+import { generateStuff } from '../../../utils/eh';
+
+export function getStaticPaths() {
+  // console.log(generateStuff())
+
+  return generateStuff()
+  // return [
+  //   {params: {start: '1', end:'2'}},
+  //   {params: {start: '2', end:'3'}},
+  //   {params: {start: '4', end:'5'}},
+  //   {params: {start: '6', end:'7'}},
+  // ];
+}
+
+const { start, end } = Astro.params;
+const {person} = Astro.props
+---
+<div>{start} to {end}! via {person} </div>
