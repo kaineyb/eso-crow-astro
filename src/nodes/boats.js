@@ -37,3 +37,5 @@ export const boats = [
   ["Woodhearth", "Vivec", "Unnamed Sailboat"], // One way
   ["Woodhearth", "Abah's Landing", "Harbor Skiff"],
 ];
+
+boats.forEach((edge) => edge.push("Boat"));

@@ -3,7 +3,7 @@
 
 const ZTP_LABEL = "Zone Transition Point";
 
-const zone_transition_points = [
+export const zoneTransitionPoints = [
   //  DC
   ["Glenumbra", "Stormhaven", ZTP_LABEL],
   ["Stormhaven", "Glenumbra", ZTP_LABEL],
@@ -57,3 +57,5 @@ const zone_transition_points = [
   ["Deshaan", "Shadowfen", ZTP_LABEL],
   ["Shadowfen", "Deshaan", ZTP_LABEL],
 ];
+
+zoneTransitionPoints.forEach((edge) => edge.push("zoneTransitionPoints"));

@@ -22,3 +22,5 @@ export const carts = [
   ["Wayrest", "Belkarth", CART_LABEL],
   ["Elden Root", "Belkarth", CART_LABEL],
 ];
+
+carts.forEach((edge) => edge.push("Carts"));

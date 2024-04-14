@@ -34,3 +34,4 @@ export const factionBoatswain = [
   ["Alten Corimont", "Windhelm", "Muz-Muz"],
   ["Windhelm", "Alten Corimont", "Muz-Muz"],
 ];
+factionBoatswain.forEach((edge) => edge.push("BoatSwain"));

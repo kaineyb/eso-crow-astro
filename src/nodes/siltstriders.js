@@ -17,3 +17,5 @@ export const siltstriders = [
   ["Vivec", "Suran", "Helseth Sadalvel"],
   ["Vivec", "Tel Mora", "Helseth Sadalvel"],
 ];
+
+siltstriders.forEach((edge) => edge.push("Siltstriders"));

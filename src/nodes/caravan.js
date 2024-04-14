@@ -1,4 +1,4 @@
-const baandariCaravanStop = [
+export const baandariCaravanStop = [
   ["Rimmen", "Elden Root", "Zemmarga"],
   ["Elden Root", "Rimmen", "Zemmarga"],
   ["Rimmen", "Wayrest", "Zemmarga"],
@@ -6,3 +6,5 @@ const baandariCaravanStop = [
   ["Rimmen", "Mournhold", "Zemmarga"],
   ["Mournhold", "Rimmen", "Zemmarga"],
 ];
+
+baandariCaravanStop.forEach((edge) => edge.push("baandariCaravanStop"));

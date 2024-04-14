@@ -140,3 +140,5 @@ export const navigator = [
   ["Alinor", "Mournhold", "Ciryelda"],
   ["Alinor", "Wayrest", "Ciryelda"],
 ];
+
+navigator.forEach((edge) => edge.push("Navigator"));
