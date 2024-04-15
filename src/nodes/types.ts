@@ -1,3 +1,6 @@
+export type BasicEdge = [string, string, string, boolean?];
+export type BasicEdgeWithLabel = [string, string, string, string, boolean?];
+
 export type EdgeType = {
   start: string;
   end: string;
@@ -9,12 +12,20 @@ export class Edge {
   end: string;
   via: string;
   edgeType: string;
+  oneWay?: boolean;
 
-  constructor(start: string, end: string, via: string, edgeType: string) {
+  constructor(
+    start: string,
+    end: string,
+    via: string,
+    edgeType: string,
+    directional: boolean = false
+  ) {
     this.start = start;
     this.end = end;
     this.via = via;
     this.edgeType = edgeType;
+    this.oneWay = directional;
   }
 
   nodes(): string[] {
@@ -29,6 +40,15 @@ export class Edge {
       edgeType: this.edgeType,
     };
 
-    return [edge];
+    if (this.oneWay) {
+      return [edge];
+    }
+
+    const edge2 = JSON.parse(JSON.stringify(edge));
+
+    edge2.start = edge.end;
+    edge2.end = edge.start;
+
+    return [edge, edge2];
   }
 }
