@@ -1,4 +1,7 @@
-export const navigator = [
+import type { SuperBasicEdge } from "./types";
+import { fleshOutSuperBasic } from "./utils";
+
+const navigatorOG: SuperBasicEdge[] = [
   //  Alliance Navigators
 
   //  AD - Selandilwen
@@ -141,4 +144,4 @@ export const navigator = [
   ["Alinor", "Wayrest", "Ciryelda"],
 ];
 
-navigator.forEach((edge) => edge.push("Navigator"));
+export const navigator = fleshOutSuperBasic(navigatorOG, "Navigators");

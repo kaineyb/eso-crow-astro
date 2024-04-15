@@ -1,8 +1,10 @@
+import type { SuperBasicEdge } from "./types";
+import { fleshOutSuperBasic } from "./utils";
 //  TODO Carts was rushed, needs checking
 
 const CART_LABEL = "Self-driven Cart";
 
-export const carts = [
+const cartsOG: SuperBasicEdge[] = [
   //  Wrothgar
   ["Orsinium", "Vulkhel Guard", CART_LABEL],
   ["Orsinium", "Daggerfall", CART_LABEL],
@@ -23,4 +25,4 @@ export const carts = [
   ["Elden Root", "Belkarth", CART_LABEL],
 ];
 
-carts.forEach((edge) => edge.push("Carts"));
+export const carts = fleshOutSuperBasic(cartsOG, "Carts");

@@ -1,6 +1,7 @@
-import type { BasicEdge, BasicEdgeWithLabel } from "./types";
+import type { SuperBasicEdge, FleshedEdge } from "./types";
+import { fleshOutSuperBasic } from "./utils";
 
-const originalBoats: BasicEdge[] = [
+const originalBoats: SuperBasicEdge[] = [
   ["Abah's Landing", "Vivec", "Unnamed Sailboat"], // One way
   ["Abah's Landing", "Windhelm", "Harbor Skiff"],
   ["Abah's Landing", "Woodhearth", "Harbor Skiff"],
@@ -21,7 +22,7 @@ const originalBoats: BasicEdge[] = [
   ["Davon's Watch", "Anvil", "Harbor Skiff"],
   ["Davon's Watch", "Vulkhel Guard", "The Rusty Argonian Blade"],
   ["Davon's Watch", "Daggerfall", "Summerwind"],
-  //  Mournhold
+  // Mournhold
   ["Mournhold", "Vivec", "Unnamed Sailboat"],
   // Vivec
   ["Vivec", "Mournhold", "Coastal Skiff"],
@@ -40,7 +41,4 @@ const originalBoats: BasicEdge[] = [
   ["Woodhearth", "Abah's Landing", "Harbor Skiff"],
 ];
 
-export const boats: BasicEdgeWithLabel = originalBoats.map((edge) => {
-  edge.push("Boat");
-  return edge;
-});
+export const boats = fleshOutSuperBasic(originalBoats, "Boats");

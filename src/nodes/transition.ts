@@ -1,9 +1,11 @@
+import type { SuperBasicEdge } from "./types";
+import { fleshOutSuperBasic } from "./utils";
 //  TODO ZTP was rushed, needs checking
 //  Also these are ZONAL not Cities.
 
 const ZTP_LABEL = "Zone Transition Point";
 
-export const zoneTransitionPoints = [
+const zoneTransitionPointsOG: SuperBasicEdge[] = [
   //  DC
   ["Glenumbra", "Stormhaven", ZTP_LABEL],
   ["Stormhaven", "Glenumbra", ZTP_LABEL],
@@ -58,4 +60,7 @@ export const zoneTransitionPoints = [
   ["Shadowfen", "Deshaan", ZTP_LABEL],
 ];
 
-zoneTransitionPoints.forEach((edge) => edge.push("zoneTransitionPoints"));
+export const zoneTransitionPoints = fleshOutSuperBasic(
+  zoneTransitionPointsOG,
+  "zoneTransitionPoints"
+);

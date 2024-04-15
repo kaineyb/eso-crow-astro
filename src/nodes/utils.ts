@@ -1,4 +1,24 @@
-import { Edge } from "./types";
+import { Edge, type FleshedEdge, type SuperBasicEdge } from "./types";
+
+export function fleshOutSuperBasic(
+  basicEdges: SuperBasicEdge[],
+  label: string
+): FleshedEdge[] {
+  const results: FleshedEdge[] = [];
+
+  for (const edge of basicEdges) {
+    const newEdge: FleshedEdge = {
+      start: edge[0],
+      end: edge[1],
+      via: edge[2],
+      edgeType: label,
+      oneWay: edge[3] ? true : false,
+    };
+    results.push(newEdge);
+  }
+
+  return results;
+}
 
 export function getStartsAndEnds(edges: Edge[]): [Set<string>, Set<string>] {
   const starts: Set<string> = new Set();
@@ -12,18 +32,13 @@ export function getStartsAndEnds(edges: Edge[]): [Set<string>, Set<string>] {
   return [starts, ends];
 }
 
-export function generateEdges(basicEdges: string[][]) {
+export function generateEdges(fleshedEdges: FleshedEdge[]) {
   const edges: Edge[] = [];
 
-  for (const edge of basicEdges) {
-    let newEdge: Edge;
-
-    if (edge.length == 4)
-      newEdge = new Edge(edge[0], edge[1], edge[2], edge[3], edge[4]);
-    else newEdge = new Edge(edge[0], edge[1], edge[2], edge[3]);
-
-    edges.push(newEdge);
-  }
+  for (const edge of fleshedEdges)
+    edges.push(
+      new Edge(edge.start, edge.end, edge.via, edge.edgeType, edge.oneWay)
+    );
 
   return edges;
 }

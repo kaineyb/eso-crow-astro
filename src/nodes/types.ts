@@ -1,10 +1,16 @@
-export type BasicEdge = [string, string, string, boolean?];
-export type BasicEdgeWithLabel = [string, string, string, string, boolean?];
+export type SuperBasicEdge = [string, string, string, true?];
 
-export type EdgeType = {
+export type BaseEdge = {
+  start: string;
+  end: string;
+};
+
+export type FleshedEdge = {
   start: string;
   end: string;
   via: string;
+  edgeType: string;
+  oneWay?: boolean;
 };
 
 export class Edge {

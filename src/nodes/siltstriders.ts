@@ -1,4 +1,7 @@
-export const siltstriders = [
+import type { SuperBasicEdge } from "./types";
+import { fleshOutSuperBasic } from "./utils";
+
+export const siltstridersOG: SuperBasicEdge[] = [
   ["Balmora", "Gnisis", "Nevos Sareloth"],
   ["Balmora", "Vivec", "Nevos Sareloth"],
   ["Gnisis", "Balmora", "Amili Yahaz"],
@@ -18,4 +21,4 @@ export const siltstriders = [
   ["Vivec", "Tel Mora", "Helseth Sadalvel"],
 ];
 
-siltstriders.forEach((edge) => edge.push("Siltstriders"));
+export const siltstriders = fleshOutSuperBasic(siltstridersOG, "Siltstriders");

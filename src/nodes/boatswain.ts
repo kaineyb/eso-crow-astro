@@ -1,4 +1,7 @@
-export const factionBoatswain = [
+import type { SuperBasicEdge } from "./types";
+import { fleshOutSuperBasic } from "./utils";
+
+const originalFactionBoatswain: SuperBasicEdge[] = [
   //  From Data on https://en.uesp.net/wiki/Online:Boatswains
 
   //  Aldmeri Dominion
@@ -34,4 +37,8 @@ export const factionBoatswain = [
   ["Alten Corimont", "Windhelm", "Muz-Muz"],
   ["Windhelm", "Alten Corimont", "Muz-Muz"],
 ];
-factionBoatswain.forEach((edge) => edge.push("BoatSwain"));
+
+export const factionBoatswain = fleshOutSuperBasic(
+  originalFactionBoatswain,
+  "FactionBoatswain"
+);
