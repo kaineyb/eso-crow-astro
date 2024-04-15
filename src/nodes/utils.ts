@@ -16,7 +16,12 @@ export function generateEdges(basicEdges: string[][]) {
   const edges: Edge[] = [];
 
   for (const edge of basicEdges) {
-    const newEdge = new Edge(edge[0], edge[1], edge[2], edge[3]);
+    let newEdge: Edge;
+
+    if (edge.length == 4)
+      newEdge = new Edge(edge[0], edge[1], edge[2], edge[3], edge[4]);
+    else newEdge = new Edge(edge[0], edge[1], edge[2], edge[3]);
+
     edges.push(newEdge);
   }
 
