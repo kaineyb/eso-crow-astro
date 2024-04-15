@@ -1,4 +1,6 @@
-export const boats = [
+import type { BasicEdge, BasicEdgeWithLabel } from "./types";
+
+const originalBoats: BasicEdge[] = [
   ["Abah's Landing", "Vivec", "Unnamed Sailboat"], // One way
   ["Abah's Landing", "Windhelm", "Harbor Skiff"],
   ["Abah's Landing", "Woodhearth", "Harbor Skiff"],
@@ -38,4 +40,7 @@ export const boats = [
   ["Woodhearth", "Abah's Landing", "Harbor Skiff"],
 ];
 
-boats.forEach((edge) => edge.push("Boat"));
+export const boats: BasicEdgeWithLabel = originalBoats.map((edge) => {
+  edge.push("Boat");
+  return edge;
+});
