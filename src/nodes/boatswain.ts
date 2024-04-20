@@ -19,8 +19,7 @@ const originalFactionBoatswain: BasicEdge[] = [
   ["Port Hunding", "Stonetooth Fortress", "Gilzir"],
   ["Stonetooth Fortress", "Daggerfall", "Gilzir"],
   ["Stonetooth Fortress", "Port Hunding", "Gilzir"],
-  ["Wayrest", "Sentinel", "Zihlijdel"],
-  ["Sentinel", "Wayrest", "Captain Carlier"],
+
   //  Ebonheart Pact
   //  TODO The Boatmaster is quest NPC that requires an invite?
   //  ["Mournhold ", "Shad Astula", "The Boatmaster"],
@@ -36,6 +35,10 @@ const originalFactionBoatswain: BasicEdge[] = [
   ["Dhalmora", "Davon's Watch", "Liezl"],
   ["Alten Corimont", "Windhelm", "Muz-Muz"],
   ["Windhelm", "Alten Corimont", "Muz-Muz"],
+
+  // One Ways w/ Different Vias
+  ["Sentinel", "Wayrest", "Captain Carlier", true], // One Way
+  ["Wayrest", "Sentinel", "Zihlijdel", true], // One Way
 ];
 
 export const factionBoatswain = generateEdgesFromBasic(
