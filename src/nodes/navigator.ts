@@ -12,23 +12,15 @@ const navigatorOG: BasicEdge[] = [
 
   ["Elden Root", "Woodhearth", "Selandilwen"],
   ["Elden Root", "Vulkhel Guard", "Selandilwen"],
-  ["Elden Root", "Wayrest", "Selandilwen"],
-  ["Elden Root", "Mournhold", "Selandilwen"],
 
   ["Woodhearth", "Vulkwasten", "Selandilwen"],
   ["Woodhearth", "Elden Root", "Selandilwen"],
-  ["Woodhearth", "Shornhelm", "Selandilwen"],
-  ["Woodhearth", "Stormhold", "Selandilwen"],
 
   ["Vulkwasten", "Rawl'kha", "Selandilwen"],
   ["Vulkwasten", "Woodhearth", "Selandilwen"],
-  ["Vulkwasten", "Sentinel", "Selandilwen"],
-  ["Vulkwasten", "Windhelm", "Selandilwen"],
 
   ["Rawl'kha", "Vulkhel Guard", "Selandilwen"],
   ["Rawl'kha", "Vulkwasten", "Selandilwen"],
-  ["Rawl'kha", "Evermore", "Selandilwen"],
-  ["Rawl'kha", "Riften", "Selandilwen"],
 
   //  EP - Falvis Raram
 
@@ -39,23 +31,15 @@ const navigatorOG: BasicEdge[] = [
 
   ["Mournhold", "Stormhold", "Falvis Raram"],
   ["Mournhold", "Davon's Watch", "Falvis Raram"],
-  ["Mournhold", "Elden Root", "Falvis Raram"],
-  ["Mournhold", "Wayrest", "Falvis Raram"],
 
   ["Stormhold", "Windhelm", "Falvis Raram"],
   ["Stormhold", "Mournhold", "Falvis Raram"],
-  ["Stormhold", "Woodhearth", "Falvis Raram"],
-  ["Stormhold", "Shornhelm", "Falvis Raram"],
 
   ["Windhelm", "Riften", "Falvis Raram"],
   ["Windhelm", "Stormhold", "Falvis Raram"],
-  ["Windhelm", "Vulkwasten", "Falvis Raram"],
-  ["Windhelm", "Sentinel", "Falvis Raram"],
 
   ["Riften", "Davon's Watch", "Falvis Raram"],
   ["Riften", "Windhelm", "Falvis Raram"],
-  ["Riften", "Rawl'kha", "Falvis Raram"],
-  ["Riften", "Evermore", "Falvis Raram"],
 
   //  DC - Azoufah
 
@@ -66,28 +50,19 @@ const navigatorOG: BasicEdge[] = [
 
   ["Wayrest", "Shornhelm", "Azoufah"],
   ["Wayrest", "Daggerfall", "Azoufah"],
-  ["Wayrest", "Elden Root", "Azoufah"],
-  ["Wayrest", "Mournhold", "Azoufah"],
 
   ["Shornhelm", "Sentinel", "Azoufah"],
   ["Shornhelm", "Wayrest", "Azoufah"],
-  ["Shornhelm", "Woodhearth", "Azoufah"],
-  ["Shornhelm", "Stormhold", "Azoufah"],
 
   ["Sentinel", "Evermore", "Azoufah"],
   ["Sentinel", "Shornhelm", "Azoufah"],
-  ["Sentinel", "Vulkwasten", "Azoufah"],
-  ["Sentinel", "Windhelm", "Azoufah"],
 
   ["Evermore", "Daggerfall", "Azoufah"],
   ["Evermore", "Sentinel", "Azoufah"],
-  ["Evermore", "Rawl'kha", "Azoufah"],
-  ["Evermore", "Riften", "Azoufah"],
 
   //  TODO Morrowind - Check Morrowind
   //  Captain Jenassa
   ["Elden Root", "Seyda Neen", "Captain Jenassa"],
-  ["Elden Root", "Vivec", "Captain Jenassa"],
 
   ["Daggerfall", "Seyda Neen", "Captain Jenassa"],
   ["Daggerfall", "Vivec", "Captain Jenassa"],
@@ -98,33 +73,12 @@ const navigatorOG: BasicEdge[] = [
   ["Stormhold", "Seyda Neen", "Captain Jenassa"],
   ["Stormhold", "Vivec", "Captain Jenassa"],
 
-  //  Bolnora Romavel
-  ["Tel Mora", "Sadrith Mora", "Bolnora Romavel"],
-
-  //  Ranor Sadralo
-  ["Gnisis", "Sadrith Mora", "Bolnora Romavel"],
-
-  //  Rinori Mathendis
-  ["Sadrith Mora", "Gnisis", "Rinori Mathendis"],
-  ["Sadrith Mora", "Tel Mora", "Rinori Mathendis"],
-  ["Sadrith Mora", "Vivec", "Rinori Mathendis"],
-
   //  Synda Imyam
-  ["Vivec", "Sadrith Mora", "Synda Imyam"],
-  ["Vivec", "Elden Root", "Synda Imyam"],
   ["Vivec", "Mournhold", "Synda Imyam"],
   ["Vivec", "Wayrest", "Synda Imyam"],
 
   //  Taros Evosa
   ["Seyda Neen", "Bleakrock Village", "Taros Evosa"],
-  ["Seyda Neen", "Port Hunding", "Taros Evosa"],
-  ["Seyda Neen", "Eagle's Strand", "Taros Evosa"],
-
-  //  Davak Hlaren
-  ["Port Hunding", "Seyda Neen", "Davak Hlaren"],
-
-  //  Sathasa Falen
-  ["Eagle's Strand", "Seyda Neen", "Sathasa Falen"],
 
   //  TODO - CHECK Summerset -
   //  Ciryelda - also found in Port Hunding?
@@ -142,6 +96,61 @@ const navigatorOG: BasicEdge[] = [
   ["Alinor", "Elden Root", "Ciryelda"],
   ["Alinor", "Mournhold", "Ciryelda"],
   ["Alinor", "Wayrest", "Ciryelda"],
+
+  // One Ways w/ Different Vias
+  ["Mournhold", "Elden Root", "Falvis Raram", true], // One Way
+  ["Elden Root", "Mournhold", "Selandilwen", true], // One Way
+
+  ["Woodhearth", "Stormhold", "Selandilwen", true], // One Way
+  ["Stormhold", "Woodhearth", "Falvis Raram", true], // One Way
+
+  ["Vulkwasten", "Windhelm", "Selandilwen", true], // One Way
+  ["Windhelm", "Vulkwasten", "Falvis Raram", true], // One Way
+
+  ["Rawl'kha", "Riften", "Selandilwen", true], // One Way
+  ["Riften", "Rawl'kha", "Falvis Raram", true], // One Way
+
+  ["Elden Root", "Wayrest", "Selandilwen", true], // One Way
+  ["Wayrest", "Elden Root", "Azoufah", true], // One Way
+
+  ["Mournhold", "Wayrest", "Falvis Raram", true], // One Way
+  ["Wayrest", "Mournhold", "Azoufah", true], // One Way
+
+  ["Woodhearth", "Shornhelm", "Selandilwen", true], // One Way
+  ["Shornhelm", "Woodhearth", "Azoufah", true], // One Way
+
+  ["Stormhold", "Shornhelm", "Falvis Raram", true], // One Way
+  ["Shornhelm", "Stormhold", "Azoufah", true], // One Way
+
+  ["Vulkwasten", "Sentinel", "Selandilwen", true], // One Way
+  ["Sentinel", "Vulkwasten", "Azoufah", true], // One Way
+
+  ["Windhelm", "Sentinel", "Falvis Raram", true], // One Way
+  ["Sentinel", "Windhelm", "Azoufah", true], // One Way
+
+  ["Rawl'kha", "Evermore", "Selandilwen", true], // One Way
+  ["Evermore", "Rawl'kha", "Azoufah", true], // One Way
+
+  ["Riften", "Evermore", "Falvis Raram", true], // One Way
+  ["Evermore", "Riften", "Azoufah", true], // One Way
+
+  ["Gnisis", "Sadrith Mora", "Ranor Sadralo", true], // One Way
+  ["Sadrith Mora", "Gnisis", "Rinori Mathendis", true], // One Way
+
+  ["Sadrith Mora", "Tel Mora", "Rinori Mathendis", true], // One Way
+  ["Tel Mora", "Sadrith Mora", "Bolnora Romavel", true], // One Way
+
+  ["Sadrith Mora", "Vivec", "Rinori Mathendis", true], // One Way
+  ["Vivec", "Sadrith Mora", "Synda Imyam", true], // One Way
+
+  ["Elden Root", "Vivec", "Captain Jenassa", true], // One Way
+  ["Vivec", "Elden Root", "Synda Imyam", true], // One Way
+
+  ["Seyda Neen", "Port Hunding", "Taros Evosa", true], // One Way
+  ["Port Hunding", "Seyda Neen", "Davak Hlaren", true], // One Way
+
+  ["Seyda Neen", "Eagle's Strand", "Taros Evosa", true], // One Way
+  ["Eagle's Strand", "Seyda Neen", "Sathasa Falen", true], // One Way
 ];
 
 export const navigator = generateEdgesFromBasic(navigatorOG, "Navigators");
