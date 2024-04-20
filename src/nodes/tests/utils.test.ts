@@ -3,9 +3,9 @@ import { expect, test } from "vitest";
 import { Edge, type SerializedEdge } from "../types";
 import { getBiDirectional, getStartsAndEnds } from "../utils";
 
-test("Test that getBiDirectional is doesn't return directional Edges", () => {
+test("Test that getBiDirectional  doesn't return directional Edges", () => {
   // Arrange
-  const directionalEdge = new Edge("Three", "One", "", "");
+  const directionalEdge = new Edge("Three", "One", "", "", true);
 
   const testEdges: Edge[] = [
     new Edge("One", "Two", "", ""),
