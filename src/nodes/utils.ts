@@ -1,3 +1,4 @@
+import type { S } from "vitest/dist/reporters-LqC_WI4d.js";
 import { Edge, type SerializedEdge, type BasicEdge } from "./types";
 
 export function generateEdgesFromBasic(
@@ -25,18 +26,14 @@ export function getStartsAndEnds(edges: Edge[]): [Set<string>, Set<string>] {
   const starts: Set<string> = new Set();
   const ends: Set<string> = new Set();
 
-  // const directional = [];
-
   for (const edge of edges) {
     starts.add(edge.start);
     ends.add(edge.end);
 
-    // if (edge.oneWay === false) {
-    //   starts.add(edge.end);
-    //   ends.add(edge.start);
-    // } else {
-    //   directional.push(edge);
-    // }
+    if (edge.oneWay === false) {
+      starts.add(edge.end);
+      ends.add(edge.start);
+    }
   }
 
   return [starts, ends];
@@ -71,17 +68,13 @@ export function getDirectional(
   return biDirectional;
 }
 
-export function getPotentialCombinations(
-  starts: Set<string>,
-  ends: Set<string>
-) {
+export function getPotentialCombinations(nodes: Set<string>) {
   const combinations: string[][] = [];
 
-  for (const start of starts) {
-    for (const end of ends) {
-      if (start === end) continue;
-      const combination = [start, end];
-
+  for (const node of nodes) {
+    for (const nextNode of nodes) {
+      if (node === nextNode) continue;
+      const combination = [node, nextNode];
       combinations.push(combination);
     }
   }
