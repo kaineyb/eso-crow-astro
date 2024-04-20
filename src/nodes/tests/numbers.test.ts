@@ -184,3 +184,8 @@ test("Testy Westy", () => {
 
   expect(mapOfEdges.size).toBe(152);
 });
+
+test("Node Count", () => {
+  const nodes = new Set([...starts, ...ends]);
+  expect(nodes.size).toBe(55);
+});
