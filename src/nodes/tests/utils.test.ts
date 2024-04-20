@@ -1,9 +1,8 @@
 // sum.test.js
 import { expect, test } from "vitest";
 
-import { Edge, type EdgeType } from "../types";
+import { Edge, type FleshedEdge } from "../types";
 import { getBiDirectional, getStartsAndEnds } from "../utils";
-import { directional } from "../all";
 
 test("Test that getBiDirectional is doesn't return directional Edges", () => {
   // Arrange
@@ -39,13 +38,13 @@ test("Test that bidirectional Edges are equivalent", () => {
   ];
 
   function createEdges(source: Edge[]) {
-    const newEdges: EdgeType[] = [];
+    const newEdges: FleshedEdge[] = [];
     for (const edge of source) newEdges.push(...edge.edges());
     return newEdges;
   }
 
-  const baseEdges: EdgeType[] = createEdges(baseScenario);
-  const testEdges: EdgeType[] = createEdges(testScenario);
+  const baseEdges: FleshedEdge[] = createEdges(baseScenario);
+  const testEdges: FleshedEdge[] = createEdges(testScenario);
 
   expect(baseEdges).toStrictEqual(testEdges);
 });
