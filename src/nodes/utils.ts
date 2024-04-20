@@ -25,9 +25,18 @@ export function getStartsAndEnds(edges: Edge[]): [Set<string>, Set<string>] {
   const starts: Set<string> = new Set();
   const ends: Set<string> = new Set();
 
+  // const directional = [];
+
   for (const edge of edges) {
     starts.add(edge.start);
     ends.add(edge.end);
+
+    // if (edge.oneWay === false) {
+    //   starts.add(edge.end);
+    //   ends.add(edge.start);
+    // } else {
+    //   directional.push(edge);
+    // }
   }
 
   return [starts, ends];
