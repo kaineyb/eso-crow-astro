@@ -32,17 +32,6 @@ export function getStartsAndEnds(edges: Edge[]): [Set<string>, Set<string>] {
   return [starts, ends];
 }
 
-export function generateEdges(fleshedEdges: SerializedEdge[]) {
-  const edges: Edge[] = [];
-
-  for (const edge of fleshedEdges)
-    edges.push(
-      new Edge(edge.start, edge.end, edge.via, edge.edgeType, edge.oneWay)
-    );
-
-  return edges;
-}
-
 export function getBiDirectional(
   edges: Edge[],
   starts: Set<string>,
@@ -98,4 +87,9 @@ export function getAllSerializedEdges(edges: Edge[]): SerializedEdge[] {
   }
 
   return serializedEdges;
+}
+
+export function edgeHash(edge: Edge) {
+  const nodes = [edge.start, edge.end, edge.via, edge.edgeType, edge.oneWay];
+  return String(nodes.toSorted());
 }
