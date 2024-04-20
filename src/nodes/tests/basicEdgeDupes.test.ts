@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { biDirectional, edges } from "../all";
+import { edges } from "../all";
 import { edgeHash, edgeHashStartEnd } from "../utils";
 import type { Edge } from "../types";
 
@@ -20,15 +20,6 @@ test("Test no duplication Edges Exist, that are Two Edges, but could be One", ()
     const hash = edgeHash(edge);
     combinations.push([edge, mapOfEdges.get(hash)]);
   }
-
-  const pairs = combinations.filter((pair) => pair[0].edgeType === "Boats");
-
-  const nuke = pairs.map((pair) => {
-    if (pair[0].start > pair[1].start) {
-      return pair[0];
-    }
-    return pair[1];
-  });
 
   expect(combinations.length).toBe(0);
 });
@@ -53,8 +44,6 @@ test("Test that 0 Fake BiDirectional Pairs Exist", () => {
 
   for (const dupe of dupes)
     biDirectionalPairs.push([dupe, mapOfEdges.get(edgeHashStartEnd(dupe))]);
-
-  console.log(biDirectionalPairs.length);
 
   const edgePrint = (edge: Edge) =>
     `[${edge.edgeType}] ${edge.start} > ${edge.end} via ${edge.via}`;

@@ -5,77 +5,67 @@ import type { Edge } from "../types";
 import { edgeHash } from "../utils";
 import { symmetricDifference } from "../../utils/helpers";
 
-test("Start Counts === 53", () => {
-  expect(starts.size).toBe(53);
+test("Start Counts === 45", () => {
+  expect(starts.size).toBe(45);
 });
 
-test("End Counts === 54", () => {
-  expect(starts.size).toBe(53);
+test("End Counts === 45", () => {
+  expect(starts.size).toBe(45);
 });
 
 test("Test Potential Combinations count doesn't change", () => {
-  expect(potentialCombinations.length).toStrictEqual(2862);
+  expect(potentialCombinations.length).toStrictEqual(2034);
 });
 
 test("Hardcoded Ends", () => {
   const oldEnds = new Set([
-    "Vivec",
-    "Windhelm",
     "Woodhearth",
     "Wayrest",
-    "Vulkhel Guard",
-    "Davon's Watch",
-    "Daggerfall",
     "Shimmerene",
-    "Anvil",
     "Lilmoth",
+    "Vivec",
+    "Anvil",
+    "Daggerfall",
+    "Davon's Watch",
     "Mournhold",
+    "Vulkhel Guard",
     "Abah's Landing",
-    "Eagle's Strand",
-    "Haven",
+    "Windhelm",
     "Skywatch",
     "Port Hunding",
     "Stonetooth Fortress",
-    "Sentinel",
     "Dhalmora",
-    "Bleakrock Village",
-    "Alten Corimont",
-    "Elden Root",
+    "Sentinel",
     "Rimmen",
     "Orsinium",
-    "Belkarth",
-    "Rawl'kha",
+    "Elden Root",
     "Vulkwasten",
-    "Shornhelm",
+    "Riften",
     "Stormhold",
     "Evermore",
-    "Riften",
+    "Shornhelm",
     "Seyda Neen",
+    "Bleakrock Village",
+    "Alinor",
+    "Rawl'kha",
     "Sadrith Mora",
     "Gnisis",
     "Tel Mora",
-    "Alinor",
+    "Eagle's Strand",
     "Balmora",
     "Suran",
     "Molag Mar",
     "Stormhaven",
-    "Glenumbra",
-    "Rivenspire",
     "Wrothgar",
-    "Bangkorai",
     "Craglorn",
     "Reaper's March",
-    "Grahtwood",
     "Malabal Tor",
     "Greenshade",
     "The Rift",
-    "East March",
     "Stonefalls",
-    "Bal Foyen",
     "Deshaan",
     "Shadowfen",
   ]);
-
   expect(oldEnds).toStrictEqual(ends);
 });
 
@@ -84,24 +74,21 @@ test("Hardcoded Starts", () => {
     "Abah's Landing",
     "Anvil",
     "Daggerfall",
-    "Davon's Watch",
-    "Mournhold",
-    "Vivec",
     "Vulkhel Guard",
     "Wayrest",
-    "Windhelm",
     "Woodhearth",
+    "Davon's Watch",
+    "Vivec",
+    "Mournhold",
+    "Windhelm",
     "Eagle's Strand",
-    "Skywatch",
     "Haven",
     "Port Hunding",
-    "Stonetooth Fortress",
-    "Sentinel",
     "Bleakrock Village",
-    "Dhalmora",
     "Alten Corimont",
-    "Rimmen",
+    "Sentinel",
     "Elden Root",
+    "Rimmen",
     "Orsinium",
     "Belkarth",
     "Vulkwasten",
@@ -110,30 +97,25 @@ test("Hardcoded Starts", () => {
     "Riften",
     "Shornhelm",
     "Evermore",
-    "Tel Mora",
-    "Gnisis",
-    "Sadrith Mora",
     "Seyda Neen",
     "Alinor",
+    "Gnisis",
+    "Sadrith Mora",
+    "Tel Mora",
     "Balmora",
     "Molag Mar",
     "Suran",
     "Glenumbra",
-    "Stormhaven",
     "Rivenspire",
-    "Wrothgar",
+    "Stormhaven",
     "Bangkorai",
-    "Craglorn",
     "Grahtwood",
-    "Reaper's March",
     "Malabal Tor",
     "Greenshade",
     "East March",
-    "The Rift",
     "Stonefalls",
     "Bal Foyen",
     "Deshaan",
-    "Shadowfen",
   ]);
 
   expect(oldStarts).toStrictEqual(starts);
@@ -141,7 +123,27 @@ test("Hardcoded Starts", () => {
 
 test("Start vs End Difference", () => {
   const diff = symmetricDifference(starts, ends);
-  const oldDiff = new Set(["Shimmerene", "Lilmoth"]);
+  const oldDiff = new Set([
+    "Haven",
+    "Alten Corimont",
+    "Belkarth",
+    "Glenumbra",
+    "Rivenspire",
+    "Bangkorai",
+    "Grahtwood",
+    "East March",
+    "Bal Foyen",
+    "Shimmerene",
+    "Lilmoth",
+    "Skywatch",
+    "Stonetooth Fortress",
+    "Dhalmora",
+    "Wrothgar",
+    "Craglorn",
+    "Reaper's March",
+    "The Rift",
+    "Shadowfen",
+  ]);
   expect(diff).toStrictEqual(oldDiff);
 });
 
@@ -156,7 +158,7 @@ test("Map of Edges to be 152", () => {
   expect(mapOfEdges.size).toBe(152);
 });
 
-test("Testy Westy", () => {
+test("Check No Dupes", () => {
   const mapOfEdges = new Map();
 
   const dupes = [];
@@ -167,22 +169,7 @@ test("Testy Westy", () => {
     else mapOfEdges.set(edgeHash(edge), edge);
   }
 
-  expect(mapOfEdges.size).toBe(152);
-  expect(dupes.length).toBe(53);
-
-  const combinations: Edge[][] = [];
-
-  for (const edge of dupes) {
-    const hash = edgeHash(edge);
-    combinations.push([edge, mapOfEdges.get(hash)]);
-  }
-
-  const nuke = combinations.filter(
-    (pair) => pair[0].edgeType === "baandariCaravanStop"
-  );
-  // console.log("nuke", nuke);
-
-  expect(mapOfEdges.size).toBe(152);
+  expect(dupes.length).toBe(0);
 });
 
 test("Node Count", () => {
