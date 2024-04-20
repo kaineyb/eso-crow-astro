@@ -3,7 +3,7 @@ import { biDirectional, edges } from "../all";
 import { edgeHash, edgeHashStartEnd } from "../utils";
 import type { Edge } from "../types";
 
-test("List Edges to Nuke", () => {
+test("Test no duplication Edges Exist, that are Two Edges, but could be One", () => {
   const mapOfEdges = new Map();
 
   const dupes = [];
@@ -30,7 +30,7 @@ test("List Edges to Nuke", () => {
     return pair[1];
   });
 
-  // console.log("nuke", nuke);
+  expect(combinations.length).toBe(0);
 });
 
 test("Test that 0 Fake BiDirectional Pairs Exist", () => {
