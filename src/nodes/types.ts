@@ -13,6 +13,15 @@ export type FleshedEdge = {
   oneWay?: boolean;
 };
 
+function flipEdges(edge: FleshedEdge): FleshedEdge {
+  const edge2 = JSON.parse(JSON.stringify(edge));
+
+  edge2.start = edge.end;
+  edge2.end = edge.start;
+
+  return edge2;
+}
+
 export class Edge {
   start: string;
   end: string;
@@ -38,7 +47,7 @@ export class Edge {
     return [this.start, this.end];
   }
 
-  edges(): EdgeType[] {
+  edges(): FleshedEdge[] {
     const edge = {
       start: this.start,
       end: this.end,
@@ -50,11 +59,6 @@ export class Edge {
       return [edge];
     }
 
-    const edge2 = JSON.parse(JSON.stringify(edge));
-
-    edge2.start = edge.end;
-    edge2.end = edge.start;
-
-    return [edge, edge2];
+    return [edge, flipEdges(edge)];
   }
 }
