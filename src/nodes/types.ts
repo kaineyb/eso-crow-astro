@@ -5,7 +5,6 @@ export type SerializedEdge = {
   end: string;
   via: string;
   edgeType: string;
-  oneWay?: boolean;
 };
 
 function flipEdges(edge: SerializedEdge): SerializedEdge {
