@@ -27,13 +27,13 @@ export const edges: Edge[] = [
 
 export const [starts, ends] = getStartsAndEnds(edges);
 
+export const nodes = new Set([...starts, ...ends]);
+
 export const biDirectional: Edge[] = getBiDirectional(edges, starts, ends);
 
 export const directional: Edge[] = getDirectional(edges, biDirectional);
 
-export const potentialCombinations: string[][] = getPotentialCombinations(
-  starts,
-  ends
-);
+export const potentialCombinations: string[][] =
+  getPotentialCombinations(nodes);
 
 export const serializedEdges: SerializedEdge[] = getAllSerializedEdges(edges);
