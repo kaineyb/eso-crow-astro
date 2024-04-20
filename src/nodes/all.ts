@@ -8,7 +8,6 @@ import { zoneTransitionPoints } from "./transition";
 
 import { Edge, type SerializedEdge } from "./types";
 import {
-  generateEdges,
   getBiDirectional,
   getPotentialCombinations,
   getDirectional,
@@ -16,7 +15,7 @@ import {
   getAllSerializedEdges,
 } from "./utils";
 
-const basicEdges: SerializedEdge[] = [
+export const edges: Edge[] = [
   ...boats,
   ...factionBoatswain,
   ...baandariCaravanStop,
@@ -25,8 +24,6 @@ const basicEdges: SerializedEdge[] = [
   ...siltstriders,
   ...zoneTransitionPoints,
 ];
-
-export const edges: Edge[] = generateEdges(basicEdges);
 
 export const [starts, ends] = getStartsAndEnds(edges);
 
@@ -39,4 +36,4 @@ export const potentialCombinations: string[][] = getPotentialCombinations(
   ends
 );
 
-export const serialisedEdges: SerializedEdge[] = getAllSerializedEdges(edges);
+export const serializedEdges: SerializedEdge[] = getAllSerializedEdges(edges);

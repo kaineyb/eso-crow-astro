@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { basicToSerializedEdge } from "./utils";
+import { generateEdgesFromBasic } from "./utils";
 
 const navigatorOG: BasicEdge[] = [
   //  Alliance Navigators
@@ -144,4 +144,4 @@ const navigatorOG: BasicEdge[] = [
   ["Alinor", "Wayrest", "Ciryelda"],
 ];
 
-export const navigator = basicToSerializedEdge(navigatorOG, "Navigators");
+export const navigator = generateEdgesFromBasic(navigatorOG, "Navigators");

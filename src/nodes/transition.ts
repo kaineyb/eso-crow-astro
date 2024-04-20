@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { basicToSerializedEdge } from "./utils";
+import { generateEdgesFromBasic } from "./utils";
 //  TODO ZTP was rushed, needs checking
 //  Also these are ZONAL not Cities.
 
@@ -60,7 +60,7 @@ const zoneTransitionPointsOG: BasicEdge[] = [
   ["Shadowfen", "Deshaan", ZTP_LABEL],
 ];
 
-export const zoneTransitionPoints = basicToSerializedEdge(
+export const zoneTransitionPoints = generateEdgesFromBasic(
   zoneTransitionPointsOG,
   "zoneTransitionPoints"
 );

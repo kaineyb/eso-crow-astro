@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { basicToSerializedEdge } from "./utils";
+import { generateEdgesFromBasic } from "./utils";
 //  TODO Carts was rushed, needs checking
 
 const CART_LABEL = "Self-driven Cart";
@@ -25,4 +25,4 @@ const cartsOG: BasicEdge[] = [
   ["Elden Root", "Belkarth", CART_LABEL],
 ];
 
-export const carts = basicToSerializedEdge(cartsOG, "Carts");
+export const carts = generateEdgesFromBasic(cartsOG, "Carts");

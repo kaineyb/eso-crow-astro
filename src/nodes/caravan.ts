@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { basicToSerializedEdge } from "./utils";
+import { generateEdgesFromBasic } from "./utils";
 
 const originalBaandariCaravanStop: BasicEdge[] = [
   ["Rimmen", "Elden Root", "Zemmarga"],
@@ -10,7 +10,7 @@ const originalBaandariCaravanStop: BasicEdge[] = [
   ["Mournhold", "Rimmen", "Zemmarga"],
 ];
 
-export const baandariCaravanStop = basicToSerializedEdge(
+export const baandariCaravanStop = generateEdgesFromBasic(
   originalBaandariCaravanStop,
   "baandariCaravanStop"
 );

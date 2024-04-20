@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { basicToSerializedEdge } from "./utils";
+import { generateEdgesFromBasic } from "./utils";
 
 export const siltstridersOG: BasicEdge[] = [
   ["Balmora", "Gnisis", "Nevos Sareloth"],
@@ -21,7 +21,7 @@ export const siltstridersOG: BasicEdge[] = [
   ["Vivec", "Tel Mora", "Helseth Sadalvel"],
 ];
 
-export const siltstriders = basicToSerializedEdge(
+export const siltstriders = generateEdgesFromBasic(
   siltstridersOG,
   "Siltstriders"
 );
