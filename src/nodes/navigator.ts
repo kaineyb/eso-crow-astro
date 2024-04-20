@@ -5,18 +5,13 @@ const navigatorOG: BasicEdge[] = [
   //  Alliance Navigators
 
   //  AD - Selandilwen
-  ["Vulkhel Guard", "Elden Root", "Selandilwen"],
-  ["Vulkhel Guard", "Rawl'kha", "Selandilwen"],
   ["Vulkhel Guard", "Daggerfall", "Selandilwen"],
   ["Vulkhel Guard", "Davon's Watch", "Selandilwen"],
 
-  ["Elden Root", "Woodhearth", "Selandilwen"],
   ["Elden Root", "Vulkhel Guard", "Selandilwen"],
 
-  ["Woodhearth", "Vulkwasten", "Selandilwen"],
   ["Woodhearth", "Elden Root", "Selandilwen"],
 
-  ["Vulkwasten", "Rawl'kha", "Selandilwen"],
   ["Vulkwasten", "Woodhearth", "Selandilwen"],
 
   ["Rawl'kha", "Vulkhel Guard", "Selandilwen"],
@@ -24,7 +19,6 @@ const navigatorOG: BasicEdge[] = [
 
   //  EP - Falvis Raram
 
-  ["Davon's Watch", "Mournhold", "Falvis Raram"],
   ["Davon's Watch", "Riften", "Falvis Raram"],
   ["Davon's Watch", "Vulkhel Guard", "Falvis Raram"],
   ["Davon's Watch", "Daggerfall", "Falvis Raram"],
@@ -33,12 +27,7 @@ const navigatorOG: BasicEdge[] = [
   ["Mournhold", "Davon's Watch", "Falvis Raram"],
 
   ["Stormhold", "Windhelm", "Falvis Raram"],
-  ["Stormhold", "Mournhold", "Falvis Raram"],
 
-  ["Windhelm", "Riften", "Falvis Raram"],
-  ["Windhelm", "Stormhold", "Falvis Raram"],
-
-  ["Riften", "Davon's Watch", "Falvis Raram"],
   ["Riften", "Windhelm", "Falvis Raram"],
 
   //  DC - Azoufah
@@ -48,16 +37,10 @@ const navigatorOG: BasicEdge[] = [
   ["Daggerfall", "Vulkhel Guard", "Azoufah"],
   ["Daggerfall", "Davon's Watch", "Azoufah"],
 
-  ["Wayrest", "Shornhelm", "Azoufah"],
-  ["Wayrest", "Daggerfall", "Azoufah"],
-
-  ["Shornhelm", "Sentinel", "Azoufah"],
   ["Shornhelm", "Wayrest", "Azoufah"],
 
-  ["Sentinel", "Evermore", "Azoufah"],
   ["Sentinel", "Shornhelm", "Azoufah"],
 
-  ["Evermore", "Daggerfall", "Azoufah"],
   ["Evermore", "Sentinel", "Azoufah"],
 
   //  TODO Morrowind - Check Morrowind
@@ -88,10 +71,6 @@ const navigatorOG: BasicEdge[] = [
 
   ["Davon's Watch", "Alinor", "Ciryelda"],
   ["Eagle's Strand", "Alinor", "Ciryelda"],
-
-  ["Elden Root", "Alinor", "Ciryelda"],
-  ["Mournhold", "Alinor", "Ciryelda"],
-  ["Wayrest", "Alinor", "Ciryelda"],
 
   ["Alinor", "Elden Root", "Ciryelda"],
   ["Alinor", "Mournhold", "Ciryelda"],
