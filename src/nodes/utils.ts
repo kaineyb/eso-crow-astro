@@ -103,3 +103,8 @@ export function edgeHash(edge: Edge) {
   const nodes = [edge.start, edge.end, edge.via, edge.edgeType, edge.oneWay];
   return String(nodes.toSorted());
 }
+
+export function edgeHashStartEnd(edge: Edge) {
+  const nodes = [edge.start, edge.end];
+  return String(nodes.toSorted());
+}
