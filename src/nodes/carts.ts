@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { fleshOutSuperBasic } from "./utils";
+import { basicToSerializedEdge } from "./utils";
 //  TODO Carts was rushed, needs checking
 
 const CART_LABEL = "Self-driven Cart";
@@ -25,4 +25,4 @@ const cartsOG: BasicEdge[] = [
   ["Elden Root", "Belkarth", CART_LABEL],
 ];
 
-export const carts = fleshOutSuperBasic(cartsOG, "Carts");
+export const carts = basicToSerializedEdge(cartsOG, "Carts");

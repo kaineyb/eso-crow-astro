@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { fleshOutSuperBasic } from "./utils";
+import { basicToSerializedEdge } from "./utils";
 
 const originalBaandariCaravanStop: BasicEdge[] = [
   ["Rimmen", "Elden Root", "Zemmarga"],
@@ -10,7 +10,7 @@ const originalBaandariCaravanStop: BasicEdge[] = [
   ["Mournhold", "Rimmen", "Zemmarga"],
 ];
 
-export const baandariCaravanStop = fleshOutSuperBasic(
+export const baandariCaravanStop = basicToSerializedEdge(
   originalBaandariCaravanStop,
   "baandariCaravanStop"
 );

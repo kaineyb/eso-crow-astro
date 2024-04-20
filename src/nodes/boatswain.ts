@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { fleshOutSuperBasic } from "./utils";
+import { basicToSerializedEdge } from "./utils";
 
 const originalFactionBoatswain: BasicEdge[] = [
   //  From Data on https://en.uesp.net/wiki/Online:Boatswains
@@ -38,7 +38,7 @@ const originalFactionBoatswain: BasicEdge[] = [
   ["Windhelm", "Alten Corimont", "Muz-Muz"],
 ];
 
-export const factionBoatswain = fleshOutSuperBasic(
+export const factionBoatswain = basicToSerializedEdge(
   originalFactionBoatswain,
   "FactionBoatswain"
 );

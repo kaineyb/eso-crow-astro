@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { fleshOutSuperBasic } from "./utils";
+import { basicToSerializedEdge } from "./utils";
 
 const navigatorOG: BasicEdge[] = [
   //  Alliance Navigators
@@ -144,4 +144,4 @@ const navigatorOG: BasicEdge[] = [
   ["Alinor", "Wayrest", "Ciryelda"],
 ];
 
-export const navigator = fleshOutSuperBasic(navigatorOG, "Navigators");
+export const navigator = basicToSerializedEdge(navigatorOG, "Navigators");

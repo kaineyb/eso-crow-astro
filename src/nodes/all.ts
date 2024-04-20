@@ -10,9 +10,10 @@ import { Edge, type SerializedEdge } from "./types";
 import {
   generateEdges,
   getBiDirectional,
-  getCombinations,
+  getPotentialCombinations,
   getDirectional,
   getStartsAndEnds,
+  getAllSerializedEdges,
 } from "./utils";
 
 const basicEdges: SerializedEdge[] = [
@@ -33,4 +34,9 @@ export const biDirectional: Edge[] = getBiDirectional(edges, starts, ends);
 
 export const directional: Edge[] = getDirectional(edges, biDirectional);
 
-export const allCombinations: string[][] = getCombinations(starts, ends);
+export const potentialCombinations: string[][] = getPotentialCombinations(
+  starts,
+  ends
+);
+
+export const serialisedEdges: SerializedEdge[] = getAllSerializedEdges(edges);

@@ -1,5 +1,5 @@
-import type { BasicEdge, SerializedEdge } from "./types";
-import { fleshOutSuperBasic } from "./utils";
+import type { BasicEdge } from "./types";
+import { basicToSerializedEdge } from "./utils";
 
 const originalBoats: BasicEdge[] = [
   ["Abah's Landing", "Vivec", "Unnamed Sailboat"], // One way
@@ -41,4 +41,4 @@ const originalBoats: BasicEdge[] = [
   ["Woodhearth", "Abah's Landing", "Harbor Skiff"],
 ];
 
-export const boats = fleshOutSuperBasic(originalBoats, "Boats");
+export const boats = basicToSerializedEdge(originalBoats, "Boats");

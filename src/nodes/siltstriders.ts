@@ -1,5 +1,5 @@
 import type { BasicEdge } from "./types";
-import { fleshOutSuperBasic } from "./utils";
+import { basicToSerializedEdge } from "./utils";
 
 export const siltstridersOG: BasicEdge[] = [
   ["Balmora", "Gnisis", "Nevos Sareloth"],
@@ -21,4 +21,7 @@ export const siltstridersOG: BasicEdge[] = [
   ["Vivec", "Tel Mora", "Helseth Sadalvel"],
 ];
 
-export const siltstriders = fleshOutSuperBasic(siltstridersOG, "Siltstriders");
+export const siltstriders = basicToSerializedEdge(
+  siltstridersOG,
+  "Siltstriders"
+);

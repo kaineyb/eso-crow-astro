@@ -1,6 +1,6 @@
 import { Edge, type SerializedEdge, type BasicEdge } from "./types";
 
-export function fleshOutSuperBasic(
+export function basicToSerializedEdge(
   basicEdges: BasicEdge[],
   label: string
 ): SerializedEdge[] {
@@ -72,7 +72,10 @@ export function getDirectional(
   return biDirectional;
 }
 
-export function getCombinations(starts: Set<string>, ends: Set<string>) {
+export function getPotentialCombinations(
+  starts: Set<string>,
+  ends: Set<string>
+) {
   const combinations: string[][] = [];
 
   for (const start of starts) {
@@ -85,4 +88,14 @@ export function getCombinations(starts: Set<string>, ends: Set<string>) {
   }
 
   return combinations;
+}
+
+export function getAllSerializedEdges(edges: Edge[]): SerializedEdge[] {
+  const serializedEdges: SerializedEdge[] = [];
+
+  for (const edge of edges) {
+    serializedEdges.push(...edge.edges());
+  }
+
+  return serializedEdges;
 }
