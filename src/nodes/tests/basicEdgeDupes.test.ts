@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { edges } from "../all";
+import { biDirectional, edges } from "../all";
 import { edgeHash, edgeHashStartEnd } from "../utils";
 import type { Edge } from "../types";
 
@@ -42,26 +42,25 @@ test("Test that 0 Fake BiDirectional Pairs Exist", () => {
     const hash = edgeHashStartEnd(edge);
     if (mapOfEdges.has(hash)) {
       const already = mapOfEdges.get(hash);
-      if (edge.via != already.via) {
+      if (edge.oneWay == true && already.oneWay === true) continue;
+      if (edge.via != already.via && edge.edgeType === already.edgeType) {
         dupes.push(edge);
       }
     } else mapOfEdges.set(hash, edge);
   }
 
-  const fakeBiDirectional = dupes.filter((dupe) => dupe.oneWay == false);
+  const biDirectionalPairs: Edge[][] = [];
 
-  for (const dupe of fakeBiDirectional) {
-    const counterpart = mapOfEdges.get(edgeHashStartEnd(dupe));
-    console.log(`${dupe.start} > ${dupe.end} via ${dupe.via}`, dupe.edgeType);
-    console.log(
-      `${counterpart.start} > ${counterpart.end} via ${counterpart.via}`,
-      counterpart.edgeType
-    );
+  for (const dupe of dupes)
+    biDirectionalPairs.push([dupe, mapOfEdges.get(edgeHashStartEnd(dupe))]);
+
+  console.log(biDirectionalPairs.length);
+
+  for (const pair of biDirectionalPairs) {
+    console.log(pair[0].start, ">", pair[0].end, "via", pair[0].via);
+    console.log(pair[1].start, ">", pair[1].end, "via", pair[1].via);
     console.log("".padEnd(50, "="));
   }
 
-  // console.log("fakeBi", fakeBi);
-  console.log(fakeBiDirectional.length);
-
-  expect(fakeBiDirectional.length).toBe(0);
+  expect(biDirectionalPairs.length).toBe(0);
 });
