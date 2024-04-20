@@ -1,19 +1,20 @@
 import { Edge, type SerializedEdge, type BasicEdge } from "./types";
 
-export function basicToSerializedEdge(
+export function generateEdgesFromBasic(
   basicEdges: BasicEdge[],
   label: string
-): SerializedEdge[] {
-  const results: SerializedEdge[] = [];
+): Edge[] {
+  const results: Edge[] = [];
 
   for (const edge of basicEdges) {
-    const newEdge: SerializedEdge = {
-      start: edge[0],
-      end: edge[1],
-      via: edge[2],
-      edgeType: label,
-      oneWay: edge[3] ? true : false,
-    };
+    const newEdge = new Edge(
+      edge[0],
+      edge[1],
+      edge[2],
+      label,
+      edge[3] ? true : false
+    );
+
     results.push(newEdge);
   }
 
