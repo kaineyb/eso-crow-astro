@@ -1,11 +1,11 @@
 ---
 
-import { generateStuff } from '../../../utils/helpers';
+import { combinationsToAstro, generateStuff } from '../../../utils/helpers';
 
 export function getStaticPaths() {
   // console.log(generateStuff())
 
-  return generateStuff()
+  return combinationsToAstro()
   // return [
   //   {params: {start: '1', end:'2'}},
   //   {params: {start: '2', end:'3'}},
