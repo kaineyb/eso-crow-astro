@@ -2,7 +2,8 @@ import type { BasicEdge } from "./types";
 import { generateEdgesFromBasic } from "./utils";
 
 export const siltstridersOG: BasicEdge[] = [
-  ["Seyda Neen", "Gnisis", "Medyn Hleran"],
+  // One Way
+  ["Seyda Neen", "Gnisis", "Medyn Hleran", true],
 
   // One Way w/ different vias
   ["Gnisis", "Balmora", "Amili Yahaz", true], // One Way
