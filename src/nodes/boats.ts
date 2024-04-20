@@ -1,7 +1,7 @@
-import type { SuperBasicEdge, FleshedEdge } from "./types";
+import type { BasicEdge, SerializedEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 
-const originalBoats: SuperBasicEdge[] = [
+const originalBoats: BasicEdge[] = [
   ["Abah's Landing", "Vivec", "Unnamed Sailboat"], // One way
   ["Abah's Landing", "Windhelm", "Harbor Skiff"],
   ["Abah's Landing", "Woodhearth", "Harbor Skiff"],

@@ -1,11 +1,11 @@
-export type SuperBasicEdge = [string, string, string, true?];
+export type BasicEdge = [string, string, string, true?];
 
-export type BaseEdge = {
+export type StartAndEndEdge = {
   start: string;
   end: string;
 };
 
-export type FleshedEdge = {
+export type SerializedEdge = {
   start: string;
   end: string;
   via: string;
@@ -13,7 +13,7 @@ export type FleshedEdge = {
   oneWay?: boolean;
 };
 
-function flipEdges(edge: FleshedEdge): FleshedEdge {
+function flipEdges(edge: SerializedEdge): SerializedEdge {
   const edge2 = JSON.parse(JSON.stringify(edge));
 
   edge2.start = edge.end;
@@ -47,7 +47,7 @@ export class Edge {
     return [this.start, this.end];
   }
 
-  edges(): FleshedEdge[] {
+  edges(): SerializedEdge[] {
     const edge = {
       start: this.start,
       end: this.end,

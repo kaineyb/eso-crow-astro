@@ -1,13 +1,13 @@
-import { Edge, type FleshedEdge, type SuperBasicEdge } from "./types";
+import { Edge, type SerializedEdge, type BasicEdge } from "./types";
 
 export function fleshOutSuperBasic(
-  basicEdges: SuperBasicEdge[],
+  basicEdges: BasicEdge[],
   label: string
-): FleshedEdge[] {
-  const results: FleshedEdge[] = [];
+): SerializedEdge[] {
+  const results: SerializedEdge[] = [];
 
   for (const edge of basicEdges) {
-    const newEdge: FleshedEdge = {
+    const newEdge: SerializedEdge = {
       start: edge[0],
       end: edge[1],
       via: edge[2],
@@ -32,7 +32,7 @@ export function getStartsAndEnds(edges: Edge[]): [Set<string>, Set<string>] {
   return [starts, ends];
 }
 
-export function generateEdges(fleshedEdges: FleshedEdge[]) {
+export function generateEdges(fleshedEdges: SerializedEdge[]) {
   const edges: Edge[] = [];
 
   for (const edge of fleshedEdges)
@@ -70,4 +70,19 @@ export function getDirectional(
   }
 
   return biDirectional;
+}
+
+export function getCombinations(starts: Set<string>, ends: Set<string>) {
+  const combinations: string[][] = [];
+
+  for (const start of starts) {
+    for (const end of ends) {
+      if (start === end) continue;
+      const combination = [start, end];
+
+      combinations.push(combination);
+    }
+  }
+
+  return combinations;
 }

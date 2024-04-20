@@ -1,11 +1,11 @@
-import type { SuperBasicEdge } from "./types";
+import type { BasicEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 //  TODO ZTP was rushed, needs checking
 //  Also these are ZONAL not Cities.
 
 const ZTP_LABEL = "Zone Transition Point";
 
-const zoneTransitionPointsOG: SuperBasicEdge[] = [
+const zoneTransitionPointsOG: BasicEdge[] = [
   //  DC
   ["Glenumbra", "Stormhaven", ZTP_LABEL],
   ["Stormhaven", "Glenumbra", ZTP_LABEL],

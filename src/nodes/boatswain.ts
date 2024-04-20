@@ -1,7 +1,7 @@
-import type { SuperBasicEdge } from "./types";
+import type { BasicEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 
-const originalFactionBoatswain: SuperBasicEdge[] = [
+const originalFactionBoatswain: BasicEdge[] = [
   //  From Data on https://en.uesp.net/wiki/Online:Boatswains
 
   //  Aldmeri Dominion

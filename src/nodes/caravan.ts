@@ -1,7 +1,7 @@
-import type { SuperBasicEdge } from "./types";
+import type { BasicEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 
-const originalBaandariCaravanStop: SuperBasicEdge[] = [
+const originalBaandariCaravanStop: BasicEdge[] = [
   ["Rimmen", "Elden Root", "Zemmarga"],
   ["Elden Root", "Rimmen", "Zemmarga"],
   ["Rimmen", "Wayrest", "Zemmarga"],

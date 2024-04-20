@@ -1,7 +1,7 @@
-import type { SuperBasicEdge } from "./types";
+import type { BasicEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 
-const navigatorOG: SuperBasicEdge[] = [
+const navigatorOG: BasicEdge[] = [
   //  Alliance Navigators
 
   //  AD - Selandilwen

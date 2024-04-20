@@ -1,10 +1,10 @@
-import type { SuperBasicEdge } from "./types";
+import type { BasicEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 //  TODO Carts was rushed, needs checking
 
 const CART_LABEL = "Self-driven Cart";
 
-const cartsOG: SuperBasicEdge[] = [
+const cartsOG: BasicEdge[] = [
   //  Wrothgar
   ["Orsinium", "Vulkhel Guard", CART_LABEL],
   ["Orsinium", "Daggerfall", CART_LABEL],

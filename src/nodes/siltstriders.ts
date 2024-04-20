@@ -1,7 +1,7 @@
-import type { SuperBasicEdge } from "./types";
+import type { BasicEdge } from "./types";
 import { fleshOutSuperBasic } from "./utils";
 
-export const siltstridersOG: SuperBasicEdge[] = [
+export const siltstridersOG: BasicEdge[] = [
   ["Balmora", "Gnisis", "Nevos Sareloth"],
   ["Balmora", "Vivec", "Nevos Sareloth"],
   ["Gnisis", "Balmora", "Amili Yahaz"],
