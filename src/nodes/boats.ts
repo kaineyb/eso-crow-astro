@@ -4,16 +4,9 @@ import { generateEdgesFromBasic } from "./utils";
 const originalBoats: BasicEdge[] = [
   ["Abah's Landing", "Woodhearth", "Harbor Skiff"],
   ["Abah's Landing", "Wayrest", "Harbor Skiff"],
-
   ["Anvil", "Shimmerene", "The Golden Gryphon"],
-
   ["Daggerfall", "Lilmoth", "Southern Dock - Murkmire Boat"],
-
   ["Vulkhel Guard", "Lilmoth", "Murkmire Boat"],
-
-  ["Wayrest", "Abah's Landing", "Harbor Skiff"],
-
-  ["Woodhearth", "Abah's Landing", "Harbor Skiff"],
 
   // One Ways w/ Same Via
   ["Abah's Landing", "Vivec", "Unnamed Sailboat", true], // One way
