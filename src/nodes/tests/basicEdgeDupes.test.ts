@@ -56,9 +56,12 @@ test("Test that 0 Fake BiDirectional Pairs Exist", () => {
 
   console.log(biDirectionalPairs.length);
 
+  const edgePrint = (edge: Edge) =>
+    `[${edge.edgeType}] ${edge.start} > ${edge.end} via ${edge.via}`;
+
   for (const pair of biDirectionalPairs) {
-    console.log(pair[0].start, ">", pair[0].end, "via", pair[0].via);
-    console.log(pair[1].start, ">", pair[1].end, "via", pair[1].via);
+    console.log(edgePrint(pair[0]));
+    console.log(edgePrint(pair[1]));
     console.log("".padEnd(50, "="));
   }
 
