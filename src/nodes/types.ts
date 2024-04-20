@@ -1,10 +1,5 @@
 export type BasicEdge = [string, string, string, true?];
 
-export type StartAndEndEdge = {
-  start: string;
-  end: string;
-};
-
 export type SerializedEdge = {
   start: string;
   end: string;
