@@ -6,19 +6,14 @@ const originalFactionBoatswain: BasicEdge[] = [
 
   //  Aldmeri Dominion
   //  Sugar-Claws will take you both ways
-  ["Vulkhel Guard", "Eagle's Strand", "Sugar-Claws"],
   ["Eagle's Strand", "Vulkhel Guard", "Sugar-Claws"],
   //  Scout Linimondil will take you both ways
-  ["Skywatch", "Haven", "Scout Linimondil"],
   ["Haven", "Skywatch", "Scout Linimondil"],
   //  Daggerfall Covenant
   //  Gilzir will take you three ways
   ["Daggerfall", "Port Hunding", "Gilzir"],
   ["Daggerfall", "Stonetooth Fortress", "Gilzir"],
-  ["Port Hunding", "Daggerfall", "Gilzir"],
   ["Port Hunding", "Stonetooth Fortress", "Gilzir"],
-  ["Stonetooth Fortress", "Daggerfall", "Gilzir"],
-  ["Stonetooth Fortress", "Port Hunding", "Gilzir"],
 
   //  Ebonheart Pact
   //  TODO The Boatmaster is quest NPC that requires an invite?
@@ -29,12 +24,8 @@ const originalFactionBoatswain: BasicEdge[] = [
 
   ["Bleakrock Village", "Davon's Watch", "Liezl"],
   ["Bleakrock Village", "Dhalmora", "Liezl"],
-  ["Davon's Watch", "Bleakrock Village", "Liezl"],
   ["Davon's Watch", "Dhalmora", "Liezl"],
-  ["Dhalmora", "Bleakrock Village", "Liezl"],
-  ["Dhalmora", "Davon's Watch", "Liezl"],
   ["Alten Corimont", "Windhelm", "Muz-Muz"],
-  ["Windhelm", "Alten Corimont", "Muz-Muz"],
 
   // One Ways w/ Different Vias
   ["Sentinel", "Wayrest", "Captain Carlier", true], // One Way
