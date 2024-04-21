@@ -1,4 +1,3 @@
-import { zoneInfo } from "./all";
 import { getCitiesZone, getCityType } from "./meta";
 
 type cityInfo = {
@@ -62,26 +61,6 @@ export function getZoneInfo(cityInfoObj: cityInfoObj, sort = true): ZoneInfo {
   return newObj;
 }
 
-export function sortZoneInfo(zoneInfo: ZoneInfo): ZoneInfo {
-  const sortedZoneInfo: ZoneInfo = {};
-
-  const sortedKeys = Object.keys(zoneInfo).toSorted((zoneA, zoneB) => {
-    const dataA = zoneInfo[zoneA];
-    const dataB = zoneInfo[zoneB];
-
-    if (zoneTypeSort(dataA.Type, dataB.Type) == 0)
-      return zoneA.localeCompare(zoneB);
-
-    return zoneTypeSort(dataA.Type, dataB.Type);
-  });
-
-  for (const key of sortedKeys) {
-    sortedZoneInfo[key] = zoneInfo[key];
-  }
-
-  return sortedZoneInfo;
-}
-
 function zoneTypeSort(zoneTypeA: string, zoneTypeB: string) {
   const order = ["AD", "DC", "EP", "Neutral", "Expansion", "DLC"];
 
@@ -91,6 +70,30 @@ function zoneTypeSort(zoneTypeA: string, zoneTypeB: string) {
 
     return aIndex - bIndex;
   }
+
+  return 0;
+}
+
+export function sortZoneInfo(zoneInfo: ZoneInfo): ZoneInfo {
+  const sortedZoneInfo: ZoneInfo = {};
+
+  function sortFunc(zoneA: string, zoneB: string) {
+    const dataA = zoneInfo[zoneA];
+    const dataB = zoneInfo[zoneB];
+
+    if (zoneTypeSort(dataA.Type, dataB.Type) == 0)
+      return zoneA.localeCompare(zoneB);
+
+    return zoneTypeSort(dataA.Type, dataB.Type);
+  }
+
+  const sortedKeys = Object.keys(zoneInfo).toSorted((a, b) => sortFunc(a, b));
+
+  for (const key of sortedKeys) {
+    sortedZoneInfo[key] = zoneInfo[key];
+  }
+
+  return sortedZoneInfo;
 }
 
 type LocationExpansion = [Type: string, Location: string, Cities: string[]];
