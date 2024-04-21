@@ -45,16 +45,16 @@ const navigatorOG: BasicEdge[] = [
 
   //  TODO Morrowind - Check Morrowind
   //  Captain Jenassa
-  ["Elden Root", "Seyda Neen", "Captain Jenassa"],
+  ["Elden Root", "Seyda Neen", "Captain Jenassa", true],
 
-  ["Daggerfall", "Seyda Neen", "Captain Jenassa"],
-  ["Daggerfall", "Vivec", "Captain Jenassa"],
+  ["Daggerfall", "Seyda Neen", "Captain Jenassa", true],
+  ["Daggerfall", "Vivec", "Captain Jenassa", true],
 
-  ["Davon's Watch", "Seyda Neen", "Captain Jenassa"],
-  ["Davon's Watch", "Vivec", "Captain Jenassa"],
+  ["Davon's Watch", "Seyda Neen", "Captain Jenassa", true],
+  ["Davon's Watch", "Vivec", "Captain Jenassa", true],
 
-  ["Stormhold", "Seyda Neen", "Captain Jenassa"],
-  ["Stormhold", "Vivec", "Captain Jenassa"],
+  ["Stormhold", "Seyda Neen", "Captain Jenassa", true],
+  ["Stormhold", "Vivec", "Captain Jenassa", true],
 
   //  Synda Imyam
   ["Vivec", "Mournhold", "Synda Imyam"],
