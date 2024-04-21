@@ -22,7 +22,7 @@ export const edges: Edge[] = [
   ...carts,
   ...navigator,
   ...siltstriders,
-  ...zoneTransitionPoints,
+  // ...zoneTransitionPoints,
 ];
 
 export const [starts, ends] = getStartsAndEnds(edges);
