@@ -1,5 +1,6 @@
 import { boats } from "./boats";
 import { factionBoatswain } from "./boatswain";
+import { createCityInfo, getZoneInfo, sortZoneInfo } from "./build";
 import { baandariCaravanStop } from "./caravan";
 import { carts } from "./carts";
 import { navigator } from "./navigator";
@@ -37,3 +38,7 @@ export const potentialCombinations: string[][] =
   getPotentialCombinations(nodes);
 
 export const serializedEdges: SerializedEdge[] = getAllSerializedEdges(edges);
+
+export const cityInfo = createCityInfo([...nodes]);
+
+export const zoneInfo = sortZoneInfo(getZoneInfo(cityInfo));
