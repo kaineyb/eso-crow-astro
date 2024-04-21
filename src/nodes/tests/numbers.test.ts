@@ -6,10 +6,10 @@ import { edgeHash } from "../utils";
 import { symmetricDifference } from "../../utils/helpers";
 
 test("Test Potential Combinations count doesn't change", () => {
-  expect(potentialCombinations.length).toStrictEqual(2970);
+  expect(potentialCombinations.length).toStrictEqual(1482);
 });
 
-test("Map of Edges to be 152", () => {
+test("Map of Edges to be 136", () => {
   const mapOfEdges = new Map();
 
   for (const edge of edges) {
@@ -17,7 +17,7 @@ test("Map of Edges to be 152", () => {
     if (mapOfEdges.has(hash)) continue;
     mapOfEdges.set(edgeHash(edge), edge);
   }
-  expect(mapOfEdges.size).toBe(152);
+  expect(mapOfEdges.size).toBe(136);
 });
 
 test("Check No Dupes", () => {
@@ -36,5 +36,5 @@ test("Check No Dupes", () => {
 
 test("Node Count", () => {
   const nodes = new Set([...starts, ...ends]);
-  expect(nodes.size).toBe(55);
+  expect(nodes.size).toBe(39);
 });
