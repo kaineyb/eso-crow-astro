@@ -1,0 +1,47 @@
+// X,Y Coords for each Node
+
+type locationMap = {
+  [location: string]: [number, number] | [];
+};
+
+export const locationCoords: locationMap = {
+  "Abah's Landing": [],
+  Alinor: [],
+  "Alten Corimont": [-350, -200],
+  Anvil: [],
+  Balmora: [],
+  Belkarth: [],
+  "Bleakrock Village": [],
+  Daggerfall: [],
+  "Davon's Watch": [],
+  Dhalmora: [],
+  "Eagle's Strand": [],
+  "Elden Root": [],
+  Evermore: [],
+  Gnisis: [],
+  Haven: [-250, -250],
+  Lilmoth: [],
+  "Molag Mar": [],
+  Mournhold: [],
+  Orsinium: [],
+  "Port Hunding": [],
+  "Rawl'kha": [],
+  Riften: [],
+  Rimmen: [],
+  "Sadrith Mora": [],
+  Sentinel: [],
+  "Seyda Neen": [],
+  Shimmerene: [],
+  Shornhelm: [],
+  Skywatch: [-350, -250],
+  "Stonetooth Fortress": [],
+  Stormhold: [],
+  Suran: [],
+  "Tel Mora": [],
+  Vivec: [],
+  "Vulkhel Guard": [],
+  Vulkwasten: [],
+  Wayrest: [],
+  Windhelm: [-350, -100],
+  Woodhearth: [],
+};
