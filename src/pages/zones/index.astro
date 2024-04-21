@@ -1,0 +1,35 @@
+---
+import { zoneInfo } from "../../nodes/all";
+import type { ZoneInfo } from "../../nodes/build";
+
+function displayZones(zones: ZoneInfo) {
+  const display: [string, string, string[]][] = [];
+  for (const [zone, zoneInfo] of Object.entries(zones)) {
+    display.push([zone, zoneInfo["Type"], zoneInfo["Cities"]]);
+  }
+
+  return display;
+}
+---
+
+<div>
+  We currently have {Object.keys(zoneInfo).length} Zones
+
+  {
+    displayZones(zoneInfo).map((zone) => {
+      const [name, type, cities] = zone;
+      return (
+        <li>
+          {name} {type}
+          <div>
+            <ul>
+              {cities.map((city) => (
+                <li>{city}</li>
+              ))}
+            </ul>
+          </div>
+        </li>
+      );
+    })
+  }
+</div>

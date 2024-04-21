@@ -1,0 +1,21 @@
+---
+import { findZoneType } from "../../nodes/meta";
+import { allZones } from "../../nodes/zones";
+
+export function getStaticPaths() {
+  const zonesParams = [];
+  for (const zone of allZones)
+    zonesParams.push({
+      params: { zone: zone },
+      props: { zoneType: findZoneType(zone) },
+    });
+
+  console.log(zonesParams);
+  return zonesParams;
+}
+
+const { zone } = Astro.params;
+const { zoneType } = Astro.props;
+---
+
+<div>Zone: {zone} Type: {zoneType}</div>
