@@ -25,15 +25,35 @@ import { onMounted, ref, watch } from "vue";
 
 import { nodes, serializedEdges } from "../nodes/all";
 
+import { locationCoords } from "../nodes/nodeLocations";
+
 const nodeArray = Array.from(nodes);
 
 const elementNodes = nodeArray.map((node) => {
-  return {
+  const obj = {
     data: {
       id: node,
     },
   };
+
+  const position = getPosition(node);
+  if (!position) return obj;
+
+  console.log(node, position);
+
+  obj.position = { x: position[0], y: position[1] };
+  obj.locked = true;
+
+  console.log(obj);
+  return obj;
 });
+
+function getPosition(name) {
+  if (!Object.keys(locationCoords).includes(name)) return undefined;
+  const position = locationCoords[name];
+  if (position.length !== 2) return undefined;
+  return position;
+}
 
 const elementEdges = serializedEdges.map((edge) => {
   return {
