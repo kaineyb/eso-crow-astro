@@ -9,8 +9,7 @@ import Graph from './Graph.vue';
 
 <Layout title="Welcome to Astro.">
 	<main>
-
-		<a href="/routes">Routes</a>
+		<Graph client:load/>	<a href="/routes">Routes</a>
 	</main>
 </Layout>
 
@@ -74,23 +73,5 @@ import Graph from './Graph.vue';
 </style>
 
 <script>
-import {edges, starts, ends, biDirectional, directional} from './../nodes/all'
-
-console.log("edges", edges)
-console.log("edges.length", edges.length)
-
-console.log("starts", starts)
-console.log("starts.length", starts.size)
-
-console.log("ends", starts)
-console.log("ends.length", ends.size)
-
-
-console.log("biDirectional", biDirectional)
-console.log("biDirectional.length", biDirectional.length)
-
-
-console.log("directional", directional)
-console.log("directional.length", directional.length)
 
 </script>
