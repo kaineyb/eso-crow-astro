@@ -9,11 +9,11 @@
 
 <style scoped>
 #cy {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
+  width: 1200px;
+  height: 800px;
+  outline: 1px solid gold;
+  margin-top: 100px;
+  margin: auto;
 }
 </style>
 
