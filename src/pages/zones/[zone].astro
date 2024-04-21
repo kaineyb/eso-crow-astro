@@ -1,4 +1,5 @@
 ---
+import Test from "../../components/Test.vue";
 import { findZoneType } from "../../nodes/meta";
 import { allZones } from "../../nodes/zones";
 
@@ -10,7 +11,6 @@ export function getStaticPaths() {
       props: { zoneType: findZoneType(zone) },
     });
 
-  console.log(zonesParams);
   return zonesParams;
 }
 
@@ -19,3 +19,5 @@ const { zoneType } = Astro.props;
 ---
 
 <div>Zone: {zone} Type: {zoneType}</div>
+
+<Test />
