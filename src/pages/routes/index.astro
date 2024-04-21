@@ -6,6 +6,6 @@ import { potentialCombinations } from '../../nodes/all';
 <div>Hello</div>
 
     <ul>
-        {potentialCombinations.map((combos)=><li><a href={`${combos[0]}/${combos[1]}`}>{combos[0]} > {combos[1]}</a></li>)}
+        {potentialCombinations.map((combos)=><li><a href={`/routes/${combos[0]}/${combos[1]}`}>{combos[0]} > {combos[1]}</a></li>)}
         <!-- {potentialCombinations} -->
     </ul>
