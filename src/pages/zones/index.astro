@@ -1,4 +1,8 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+
+import ZoneCard from "../../components/ZoneCard.vue";
+
 import { zoneInfo } from "../../nodes/all";
 import type { ZoneInfo } from "../../nodes/build";
 
@@ -12,24 +16,29 @@ function displayZones(zones: ZoneInfo) {
 }
 ---
 
-<div>
-  We currently have {Object.keys(zoneInfo).length} Zones
+<Layout title="Zones">
+  <main class="zones">
+    We currently have {Object.keys(zoneInfo).length} Zones
+    <div class="zone-container">
+      {
+        displayZones(zoneInfo).map((zone) => {
+          const [name, type, cities] = zone;
+          return (
+            <ZoneCard
+              zoneName={name}
+              zoneType={type}
+              cities={cities}
+            />
+          );
+        })
+      }
+    </div>
+  </main>
+</Layout>
 
-  {
-    displayZones(zoneInfo).map((zone) => {
-      const [name, type, cities] = zone;
-      return (
-        <li>
-          {name} {type}
-          <div>
-            <ul>
-              {cities.map((city) => (
-                <li>{city}</li>
-              ))}
-            </ul>
-          </div>
-        </li>
-      );
-    })
+<style scoped>
+  .zones {
   }
-</div>
+  .zone-container {
+  }
+</style>
