@@ -1,11 +1,32 @@
 ---
-import { potentialCombinations } from '../../nodes/all';
+import Layout from "../../layouts/Layout.astro";
 
-
+import { potentialCombinations } from "../../nodes/all";
 ---
-<div>Hello</div>
 
-    <ul>
-        {potentialCombinations.map((combos)=><li><a href={`/routes/${combos[0]}/${combos[1]}`}>{combos[0]} > {combos[1]}</a></li>)}
-        <!-- {potentialCombinations} -->
-    </ul>
+<Layout title="Routes">
+  <ul>
+    <div class="routes-container">
+      {
+        potentialCombinations.map((combos) => (
+          <li>
+            <a href={`/routes/${combos[0]}/${combos[1]}`}>
+              {combos[0]} > {combos[1]}
+            </a>
+          </li>
+        ))
+      }
+      <!-- {potentialCombinations} -->
+    </div>
+  </ul>
+</Layout>
+
+<style scoped>
+  .routes-container {
+    width: 1080px;
+    margin: auto auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+</style>
