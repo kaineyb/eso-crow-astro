@@ -1,11 +1,11 @@
 ---
-
-import { combinationsToAstro, generateStuff } from '../../../utils/helpers';
+import Layout from "../../../layouts/Layout.astro";
+import { combinationsToAstro } from "../../../utils/helpers";
 
 export function getStaticPaths() {
   // console.log(generateStuff())
 
-  return combinationsToAstro()
+  return combinationsToAstro();
   // return [
   //   {params: {start: '1', end:'2'}},
   //   {params: {start: '2', end:'3'}},
@@ -15,6 +15,11 @@ export function getStaticPaths() {
 }
 
 const { start, end } = Astro.params;
-const {person} = Astro.props
+const { person } = Astro.props;
 ---
-<div>{start} to {end}! via {person} </div>
+
+<Layout title="Route">
+  <div>{start} to {end}! via {person}</div>
+</Layout>
+
+<style scoped></style>
