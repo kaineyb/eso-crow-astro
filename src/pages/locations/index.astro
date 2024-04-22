@@ -1,12 +1,16 @@
 ---
+import Layout from "../../layouts/Layout.astro";
+
 import { nodes } from "../../nodes/all";
-
 const locations = [...nodes];
-
 locations.sort();
 ---
 
-<div>
-  We currently have {locations.length} Locations
-  {locations.map((location) => <li>{location}</li>)}
-</div>
+<Layout title="Locations">
+  <div>
+    We currently have {locations.length} Locations
+    {locations.map((location) => <li>{location}</li>)}
+  </div>
+</Layout>
+
+<style scoped></style>
