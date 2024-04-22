@@ -1,4 +1,7 @@
 ---
+import Footer from "../components/Footer.vue";
+import Header from "../components/Header.vue";
+import "primevue/resources/themes/aura-light-green/theme.css";
 interface Props {
   title: string;
 }
@@ -27,38 +30,53 @@ const { title } = Astro.props;
       name="generator"
       content={Astro.generator}
     />
-    <title>{title}</title>
+    <title>{title} - ESO Crow</title>
   </head>
+  <Header />
   <body>
     <slot />
   </body>
+  <Footer />
+
+  <style is:global>
+    :root {
+      --accent: 136, 58, 234;
+      --accent-light: 224, 204, 250;
+      --accent-dark: 49, 10, 101;
+      --accent-gradient: linear-gradient(
+        45deg,
+        rgb(var(--accent)),
+        rgb(var(--accent-light)) 30%,
+        white 60%
+      );
+    }
+    html {
+      font-family: system-ui, sans-serif;
+      background: #1d1d1d;
+      background-size: 224px;
+    }
+
+    a {
+      color: white;
+    }
+
+    a:hover {
+      color: gold;
+    }
+
+    a:visited {
+      color: wheat;
+    }
+    code {
+      font-family:
+        Menlo,
+        Monaco,
+        Lucida Console,
+        Liberation Mono,
+        DejaVu Sans Mono,
+        Bitstream Vera Sans Mono,
+        Courier New,
+        monospace;
+    }
+  </style>
 </html>
-<style is:global>
-  :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
-  }
-  html {
-    font-family: system-ui, sans-serif;
-    background: #4b587a;
-    background-size: 224px;
-  }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
-  }
-</style>
