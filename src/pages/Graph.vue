@@ -89,6 +89,8 @@ onMounted(() => {
         selector: "node",
         style: {
           label: "data(id)",
+          color: "white",
+          backgroundColor: "goldenrod",
         },
       },
     ],
