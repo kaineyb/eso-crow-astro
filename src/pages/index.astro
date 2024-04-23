@@ -1,11 +1,13 @@
 ---
+import RouteSearch from "../components/RouteSearch.vue";
 import Layout from "../layouts/Layout.astro";
 import Graph from "./Graph.vue";
 ---
 
 <Layout title="Welcome">
   <main>
-    <div><Graph client:load /></div>
+    <div><RouteSearch client:load /></div>
+    <!-- <div><Graph client:load /></div> -->
   </main>
 </Layout>
 
