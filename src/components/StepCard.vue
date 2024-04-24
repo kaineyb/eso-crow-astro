@@ -5,8 +5,9 @@
     ><br />
     {{ source }} [{{ getCitiesZone(source) }}] [{{ getCityType(source) }}]<br />
     {{ target }} [{{ getCitiesZone(source) }}] [{{ getCityType(source) }}]<br />
-    {{ via }}<br />
-    {{ edgeType }}<br />
+    <a :href="uespURL(via)">{{ via }}</a> <br />
+    <a :href="uespURL(edgeType)">{{ edgeType }}</a
+    ><br />
   </div>
 </template>
 <script setup>
