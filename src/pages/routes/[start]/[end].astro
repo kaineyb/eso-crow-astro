@@ -1,25 +1,52 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
-import { combinationsToAstro } from "../../../utils/helpers";
+
+import { cy, targetToSourceToPrettyArray } from "../../../nodes/graph";
+import { potentialCombinations } from "../../../nodes/all";
+
+import StepCard from "../../../components/StepCard.vue";
+
+export function combinationsToAstro() {
+  const output = [];
+
+  for (const [start, end] of potentialCombinations) {
+    output.push({
+      params: { start: start, end: end },
+    });
+  }
+
+  return output;
+}
 
 export function getStaticPaths() {
-  // console.log(generateStuff())
-
   return combinationsToAstro();
-  // return [
-  //   {params: {start: '1', end:'2'}},
-  //   {params: {start: '2', end:'3'}},
-  //   {params: {start: '4', end:'5'}},
-  //   {params: {start: '6', end:'7'}},
-  // ];
 }
 
 const { start, end } = Astro.params;
-const { person } = Astro.props;
+
+const [route, distance] = targetToSourceToPrettyArray(cy, start, end);
 ---
 
 <Layout title="Route">
-  <div>{start} to {end}! via {person}</div>
-</Layout>
+  <div>{start} to {end}!</div>
 
-<style scoped></style>
+  <div>
+    Route found in {distance} steps
+    <ul>
+      {
+        route.map((step) => (
+          <StepCard
+            step={step.step}
+            edge={step.edge}
+            source={step.source}
+            target={step.target}
+            via={step.via}
+            edgeType={step.edgeType}
+          />
+        ))
+      }
+    </ul>
+  </div>
+
+  <style scoped></style>
+</Layout>
