@@ -1,4 +1,3 @@
-import type { S } from "vitest/dist/reporters-LqC_WI4d.js";
 import { Edge, type SerializedEdge, type BasicEdge } from "./types";
 
 export function generateEdgesFromBasic(
