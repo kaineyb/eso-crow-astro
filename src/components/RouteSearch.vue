@@ -1,19 +1,25 @@
 <template>
-  <AutoComplete
-    v-model="source"
-    placeholder="Source"
-    :suggestions="sourceNodes"
-    @complete="(event) => search(event, 'source')"
-    :invalid="!sourceValid"
-  />
-  <AutoComplete
-    v-model="target"
-    placeholder="Target"
-    :suggestions="targetNodes"
-    @complete="(event) => search(event, 'target')"
-    :invalid="!targetValid"
-  />
-  <Button label="Fly, my pretties!" />
+  <form :action="`/routes/${source}/${target}/`">
+    <AutoComplete
+      v-model="source"
+      placeholder="Source"
+      :suggestions="sourceNodes"
+      @complete="(event) => search(event, 'source')"
+      :invalid="!sourceValid"
+    />
+    <AutoComplete
+      v-model="target"
+      placeholder="Target"
+      :suggestions="targetNodes"
+      @complete="(event) => search(event, 'target')"
+      :invalid="!targetValid"
+    />
+    <Button
+      type="submit"
+      label="Fly, my pretties!"
+      :disabled="!routeValid"
+    />
+  </form>
 </template>
 <script setup>
 import { ref, readonly, computed } from "vue";
