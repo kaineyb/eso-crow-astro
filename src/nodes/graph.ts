@@ -118,8 +118,6 @@ export function targetToSource(
   const result = pathTo(targetElement);
   const distance = distanceTo(targetElement);
 
-  const edges = listEdges(result);
-
   return [result, distance];
 }
 

@@ -39,12 +39,9 @@ const elementNodes = nodeArray.map((node) => {
   const position = getPosition(node);
   if (!position) return obj;
 
-  console.log(node, position);
-
   obj.position = { x: position[0], y: position[1] };
   obj.locked = true;
 
-  console.log(obj);
   return obj;
 });
 
@@ -66,9 +63,6 @@ const elementEdges = serializedEdges.map((edge) => {
 });
 
 const elements = [...elementNodes, ...elementEdges];
-
-// console.log(elementNodes);
-// console.log(serializedEdges);
 
 const cyRef = ref(null);
 

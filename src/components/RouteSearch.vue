@@ -52,9 +52,6 @@ const routeValid = computed(() => {
 });
 
 const search = (event, model) => {
-  console.log(model);
-  console.log("eh", event.query.trim().length);
-
   if (!event.query.trim().length) {
     if (model === "source") sourceNodes.value = [...nodeArray];
     if (model === "target") targetNodes.value = [...nodeArray];

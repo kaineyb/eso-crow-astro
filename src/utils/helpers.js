@@ -23,5 +23,3 @@ export function symmetricDifference(setA, setB) {
   }
   return difference;
 }
-
-// console.log(siltstriders);
