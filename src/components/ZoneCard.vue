@@ -3,7 +3,7 @@
     <div>{{ zoneName }} - {{ zoneType }}</div>
 
     <ul>
-      <li v-for="city in cities">
+      <li v-for="city in cities.sort()">
         {{ city }}
       </li>
     </ul>
