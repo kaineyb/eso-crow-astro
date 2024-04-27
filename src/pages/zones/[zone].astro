@@ -1,10 +1,8 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { findZoneType } from "../../nodes/meta";
 import { allZones } from "../../nodes/zones";
 
 import { zoneInfo } from "../../nodes/all";
-import type { ZoneInfo } from "../../nodes/build";
 import ZoneCard from "../../components/ZoneCard.vue";
 
 export function getStaticPaths() {
