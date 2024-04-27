@@ -34,5 +34,5 @@ const originalFactionBoatswain: BasicEdge[] = [
 
 export const factionBoatswain = generateEdgesFromBasic(
   originalFactionBoatswain,
-  "FactionBoatswain"
+  "Boatswain"
 );
