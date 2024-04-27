@@ -16,11 +16,8 @@ export function getStaticPaths() {
 
 const { location } = Astro.params;
 
-console.log("location", location);
 const from = sourceToAll(cy, location);
 const to = allToSource(cy, location);
-
-console.log(to);
 ---
 
 <Layout title={location}>
