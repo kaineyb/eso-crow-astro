@@ -38,11 +38,11 @@ export const dc = [
 export const neutral = ["Craglorn"];
 
 export const chapter = [
-  "Artaeum",
+  // "Artaeum",
   "Northern Elsweyr",
   "Summerset",
   "Vvardenfell",
-  "Western Skyrim",
+  // "Western Skyrim",
 ];
 
 export const dlc = [
