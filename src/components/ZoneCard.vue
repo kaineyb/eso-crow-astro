@@ -1,10 +1,12 @@
 <template>
   <div class="outer-container">
-    <div>{{ zoneName }} - {{ zoneType }}</div>
+    <div>
+      <a :href="`/zones/${zoneName}`">{{ zoneName }}</a> - {{ zoneType }}
+    </div>
 
     <ul>
-      <li v-for="city in cities">
-        {{ city }}
+      <li v-for="city in cities.sort()">
+        <a :href="`/locations/${city}`">{{ city }}</a>
       </li>
     </ul>
   </div>

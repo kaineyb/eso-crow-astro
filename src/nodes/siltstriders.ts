@@ -33,5 +33,5 @@ export const siltstridersOG: BasicEdge[] = [
 
 export const siltstriders = generateEdgesFromBasic(
   siltstridersOG,
-  "Siltstriders"
+  "Caravaners"
 );

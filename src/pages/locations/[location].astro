@@ -1,0 +1,42 @@
+---
+import LocationDistances from "../../components/LocationDistances.vue";
+import Layout from "../../layouts/Layout.astro";
+import { nodes } from "../../nodes/all";
+import { sourceToAll, cy, allToSource } from "../../nodes/graph";
+
+export function getStaticPaths() {
+  const nodePaths = [];
+  for (const node of nodes)
+    nodePaths.push({
+      params: { location: node },
+    });
+
+  return nodePaths;
+}
+
+const { location } = Astro.params;
+
+const from = sourceToAll(cy, location);
+const to = allToSource(cy, location);
+---
+
+<Layout title={location}>
+  <h2>{location}</h2>
+
+  Travelling from <strong>{location}</strong> you can get to the places below.
+
+  <LocationDistances
+    direction="from"
+    source={location}
+    results={from}
+  />
+
+  <h2>Getting to {location}</h2>
+  You can get to {location} from the places below:
+
+  <LocationDistances
+    direction="to"
+    source={location}
+    results={to}
+  />
+</Layout>

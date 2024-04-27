@@ -100,3 +100,29 @@ export function edgeHashStartEnd(edge: Edge) {
   const nodes = [edge.start, edge.end];
   return String(nodes.toSorted());
 }
+
+const cartsAndBoats =
+  "https://en.uesp.net/wiki/Online:Transport#Carts_and_Boats";
+
+const boatSwains = "https://en.uesp.net/wiki/Online:Boatswains";
+const caravaners = "https://en.uesp.net/wiki/Online:Caravaners";
+
+const uespURLMap: { [edgeType: string]: string } = {
+  Carts: cartsAndBoats,
+  "Self-driven Cart": cartsAndBoats,
+  Boats: cartsAndBoats,
+  "Unnamed Sailboat": cartsAndBoats,
+  "Coastal Skiff": cartsAndBoats,
+  "Harbor Skiff": cartsAndBoats,
+
+  Boatswain: boatSwains,
+  Caravaners: caravaners,
+};
+
+export function uespURL(edgeType: string): string {
+  const result = uespURLMap[edgeType];
+
+  if (result) return result;
+
+  return `https://en.uesp.net/wiki/Online:${edgeType}`;
+}

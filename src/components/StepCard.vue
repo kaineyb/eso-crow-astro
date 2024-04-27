@@ -3,8 +3,17 @@
     {{ step }}<br />
     <strong>{{ edge }}</strong
     ><br />
-    {{ source }} [{{ getCitiesZone(source) }}] [{{ getCityType(source) }}]<br />
-    {{ target }} [{{ getCitiesZone(source) }}] [{{ getCityType(source) }}]<br />
+
+    <a :href="`/locations/${source}`">{{ source }}</a> [<a
+      :href="`/zones/${getCitiesZone(source)}`"
+      >{{ getCitiesZone(source) }}</a
+    >] [{{ getCityType(source) }}]<br />
+
+    <a :href="`/locations/${target}`">{{ target }}</a> [<a
+      :href="`/zones/${getCitiesZone(target)}`"
+      >{{ getCitiesZone(target) }}</a
+    >] [{{ getCityType(target) }}]<br />
+
     <a :href="uespURL(via)">{{ via }}</a> <br />
     <a :href="uespURL(edgeType)">{{ edgeType }}</a
     ><br />
@@ -12,10 +21,7 @@
 </template>
 <script setup>
 import { getCitiesZone, getCityType } from "../nodes/meta";
-
-function uespURL(name) {
-  return `https://en.uesp.net/wiki/Online:${name}`;
-}
+import { uespURL } from "../nodes/utils";
 
 const props = defineProps({
   step: Number,

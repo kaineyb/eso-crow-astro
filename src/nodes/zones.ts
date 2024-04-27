@@ -33,22 +33,24 @@ export const dc = [
   "Stros M'Kai",
 ];
 
-export const neutral = ["Coldharbour", "Craglorn", "Cyrodiil"];
+// ColdHarbour/ Cyrodiil has issues...
+// export const neutral = ["Coldharbour", "Craglorn", "Cyrodiil"];
+export const neutral = ["Craglorn"];
 
 export const chapter = [
-  "Artaeum",
+  // "Artaeum",
   "Northern Elsweyr",
   "Summerset",
   "Vvardenfell",
-  "Western Skyrim",
+  // "Western Skyrim",
 ];
 
 export const dlc = [
-  "Clockwork City",
+  // "Clockwork City",
   "Gold Coast",
   "Hew's Bane",
   "Murkmire",
-  "Southern Elsweyr",
+  // "Southern Elsweyr",
   "Wrothgar",
 ];
 
