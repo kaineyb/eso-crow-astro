@@ -46,11 +46,11 @@ export const chapter = [
 ];
 
 export const dlc = [
-  "Clockwork City",
+  // "Clockwork City",
   "Gold Coast",
   "Hew's Bane",
   "Murkmire",
-  "Southern Elsweyr",
+  // "Southern Elsweyr",
   "Wrothgar",
 ];
 
