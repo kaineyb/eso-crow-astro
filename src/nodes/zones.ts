@@ -33,7 +33,9 @@ export const dc = [
   "Stros M'Kai",
 ];
 
-export const neutral = ["Coldharbour", "Craglorn", "Cyrodiil"];
+// ColdHarbour has issues.?
+// export const neutral = ["Coldharbour", "Craglorn", "Cyrodiil"];
+export const neutral = ["Craglorn", "Cyrodiil"];
 
 export const chapter = [
   "Artaeum",
