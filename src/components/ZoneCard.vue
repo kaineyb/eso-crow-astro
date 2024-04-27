@@ -4,7 +4,7 @@
 
     <ul>
       <li v-for="city in cities.sort()">
-        {{ city }}
+        <a :href="`/zones/${city}`">{{ city }}</a>
       </li>
     </ul>
   </div>
