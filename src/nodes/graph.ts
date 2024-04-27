@@ -165,3 +165,56 @@ export function targetToSourceToPrettyArray(
   }
   return [edges, distance];
 }
+
+export type LocationDistances = {
+  distance: number;
+  target: string;
+};
+
+export function sourceToAll(cy: Core, source: string): LocationDistances[] {
+  const results: LocationDistances[] = [];
+
+  const elements = cy.elements();
+  const sourceElement = elements.filter((ele) => ele.data("id") == source);
+
+  const { distanceTo } = elements.dijkstra({
+    root: sourceElement,
+    directed: true,
+  });
+
+  for (const element of elements) {
+    if (element.isEdge()) continue;
+    const target = element.data("id");
+    if (target === sourceElement.data("id")) continue;
+
+    const distance = distanceTo(element);
+
+    if (distance !== Infinity) results.push({ distance, target });
+  }
+
+  return results;
+}
+
+export function allToSource(cy: Core, source: string): LocationDistances[] {
+  const results: LocationDistances[] = [];
+
+  const elements = cy.elements();
+  const sourceElement = elements.filter((ele) => ele.data("id") == source);
+
+  for (const element of elements) {
+    if (element.isEdge()) continue;
+    const target = element.data("id");
+    if (target === sourceElement.data("id")) continue;
+
+    const { distanceTo } = elements.dijkstra({
+      root: element,
+      directed: true,
+    });
+
+    const distance = distanceTo(sourceElement);
+
+    if (distance !== Infinity) results.push({ distance, target });
+  }
+
+  return results;
+}
