@@ -1,23 +1,31 @@
 ---
-import Test from "../../components/Test.vue";
+import Layout from "../../layouts/Layout.astro";
 import { findZoneType } from "../../nodes/meta";
 import { allZones } from "../../nodes/zones";
+
+import { zoneInfo } from "../../nodes/all";
+import type { ZoneInfo } from "../../nodes/build";
+import ZoneCard from "../../components/ZoneCard.vue";
 
 export function getStaticPaths() {
   const zonesParams = [];
   for (const zone of allZones)
     zonesParams.push({
       params: { zone: zone },
-      props: { zoneType: findZoneType(zone) },
     });
 
   return zonesParams;
 }
 
 const { zone } = Astro.params;
-const { zoneType } = Astro.props;
+
+const { Type, Cities } = zoneInfo[zone];
 ---
 
-<div>Zone: {zone} Type: {zoneType}</div>
-
-<Test client:load />
+<Layout title={zone}>
+  <ZoneCard
+    zoneName={zone}
+    zoneType={Type}
+    cities={Cities}
+  />
+</Layout>
