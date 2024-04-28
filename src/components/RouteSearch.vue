@@ -38,6 +38,8 @@
     </FloatLabel>
 
     <Button
+      icon="pi pi-search"
+      iconPos="right"
       type="submit"
       label="Fly, my pretties!"
       :disabled="!routeValid"
