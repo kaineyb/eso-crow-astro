@@ -1,5 +1,6 @@
 <template>
   <a
+    v-if="props.mode === 'text'"
     @click="generateRoute"
     :href="url"
     >Random Route</a
@@ -8,6 +9,8 @@
 <script setup>
 import { nodes } from "../nodes/all";
 import { ref, computed } from "vue";
+
+const props = defineProps(["mode"]);
 
 const nodesArray = Array.from(nodes);
 
