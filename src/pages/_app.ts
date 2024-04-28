@@ -2,6 +2,7 @@ import type { App } from "vue";
 
 import PrimeVue from "primevue/config";
 import "primevue/resources/themes/aura-light-green/theme.css";
+import "primeicons/primeicons.css";
 
 import Button from "primevue/button";
 import Calendar from "primevue/calendar";
