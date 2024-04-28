@@ -1,13 +1,15 @@
 ---
 import RouteSearch from "../components/RouteSearch.vue";
 import Layout from "../layouts/Layout.astro";
-import Graph from "./Graph.vue";
+import Graph from "../components/Graph.vue";
+import RandomRoute from "../components/RandomRoute.vue";
 ---
 
 <Layout title="Welcome">
   <main>
     <div><RouteSearch client:only="vue" /></div>
     <!-- <div><Graph client:load /></div> -->
+    <RandomRoute client:only />
   </main>
 </Layout>
 
