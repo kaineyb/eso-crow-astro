@@ -7,7 +7,7 @@ import "primeicons/primeicons.css";
 import Button from "primevue/button";
 import Calendar from "primevue/calendar";
 import AutoComplete from "primevue/autocomplete";
-import FloatLabel from "primevue/FloatLabel";
+import FloatLabel from "primevue/floatlabel";
 
 export default (app: App) => {
   app.use(PrimeVue);
