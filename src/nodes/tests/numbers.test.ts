@@ -1,9 +1,7 @@
 import { expect, test } from "vitest";
 
 import { potentialCombinations, edges, starts, ends } from "../all";
-import type { Edge } from "../types";
 import { edgeHash } from "../utils";
-import { symmetricDifference } from "../../utils/helpers";
 
 test("Test Potential Combinations count doesn't change", () => {
   expect(potentialCombinations.length).toStrictEqual(1482);

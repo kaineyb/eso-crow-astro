@@ -1,25 +1,5 @@
-import { siltstriders } from "../nodes/siltstriders";
-import { potentialCombinations } from "../nodes/all";
-
-export function generateStuff() {
-  const output = [];
-
-  for (const [start, end, person] of siltstriders) {
-    output.push({
-      params: { start: start, end: end },
-      props: { person: person },
-    });
-  }
-
-  return output;
-}
-
-export function symmetricDifference(setA, setB) {
-  const difference = new Set([...setA].filter((x) => !setB.has(x)));
-  for (const elem of setB) {
-    if (!setA.has(elem)) {
-      difference.add(elem);
-    }
-  }
-  return difference;
+export function getRandomInt(min, max) {
+  const minCeiled = Math.ceil(min);
+  const maxFloored = Math.floor(max + 1);
+  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
 }

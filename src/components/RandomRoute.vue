@@ -10,29 +10,39 @@
 import { nodes } from "../nodes/all";
 import { ref, computed } from "vue";
 
+import { getRandomInt } from "../utils/helpers";
+
 const props = defineProps(["mode"]);
 
 const nodesArray = Array.from(nodes);
 
-const source = ref("?");
-const target = ref("?");
+const defaultValue = "?";
 
-const url = computed(() => `/routes/${source.value}/${target.value}`);
+const source = ref(defaultValue);
+const target = ref(defaultValue);
 
-function getRandomInt(min, max) {
-  const minCeiled = Math.ceil(min);
-  const maxFloored = Math.floor(max + 1);
-  return Math.floor(Math.random() * (maxFloored - minCeiled) + minCeiled); // The maximum is exclusive and the minimum is inclusive
-}
+const url = computed(() => {
+  if (!source.value || !source.value) return "#";
+  return `/routes/${source.value}/${target.value}`;
+});
 
 function generateRoute() {
-  const sourceIndex = getRandomInt(0, nodesArray.length);
-  let targetIndex = getRandomInt(0, nodesArray.length);
-  while (sourceIndex === targetIndex)
-    targetIndex = getRandomInt(0, nodesArray.length);
+  let sourceNode = undefined;
+  let targetNode = undefined;
 
-  source.value = nodesArray[sourceIndex];
-  target.value = nodesArray[targetIndex];
+  while (!sourceNode) {
+    const index = getRandomInt(0, nodesArray.length);
+    sourceNode = nodesArray[index];
+  }
+
+  while (!targetNode) {
+    const index = getRandomInt(0, nodesArray.length);
+    const node = nodesArray[index];
+    if (node != sourceNode) targetNode = node;
+  }
+
+  source.value = sourceNode;
+  target.value = targetNode;
 }
 </script>
 <style scoped></style>
