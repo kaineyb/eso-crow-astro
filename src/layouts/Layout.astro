@@ -31,11 +31,14 @@ const { title } = Astro.props;
     />
     <title>{title} - ESO Crow</title>
   </head>
-  <Header client:load />
+  <Header client:only="vue" />
+
   <body>
-    <slot />
+    <div class="body-container">
+      <slot />
+    </div>
   </body>
-  <Footer client:load />
+  <Footer client:only="vue" />
 
   <style is:global>
     :root {
@@ -77,6 +80,11 @@ const { title } = Astro.props;
         Bitstream Vera Sans Mono,
         Courier New,
         monospace;
+    }
+
+    .body-container {
+      outline: 1px solid gold;
+      padding: 20px;
     }
   </style>
 </html>
