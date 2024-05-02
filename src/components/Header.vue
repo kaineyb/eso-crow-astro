@@ -1,15 +1,22 @@
 <template>
-  <ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/routes">Routes</a></li>
-    <li><a href="/zones">Zones</a></li>
-    <li><a href="/locations">Locations</a></li>
-    <li>
-      <RandomRoute mode="text" />
-    </li>
-  </ul>
+  <div class="card flex justify-content-center">
+    <Menu :model="items" />
+  </div>
 </template>
+
 <script setup>
-import RandomRoute from "../components/RandomRoute.vue";
+import { generateRoute } from "../utils/helpers";
+import { ref } from "vue";
+
+const items = ref([
+  { label: "Home", icon: "pi pi-home", url: "/" },
+  { label: "Routes", icon: "pi pi-directions", url: "/routes" },
+  { label: "Zones", icon: "pi pi-map", url: "/zones" },
+  { label: "Locations", icon: "pi pi-map-marker", url: "/locations" },
+  {
+    label: "Random Route",
+    icon: "pi pi-sparkles",
+    url: generateRoute(),
+  },
+]);
 </script>
-<style scoped></style>
