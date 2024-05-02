@@ -9,7 +9,6 @@
         spellcheck="false"
         :delay="0"
         variant="filled"
-        inputId="source"
         v-model="source"
         forceSelection
         dropdown
@@ -26,6 +25,7 @@
         :emptySearchMessage="noSearchMsg"
         spellcheck="false"
         :delay="0"
+        variant="filled"
         v-model="target"
         forceSelection
         dropdown
