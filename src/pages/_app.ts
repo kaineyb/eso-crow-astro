@@ -10,6 +10,8 @@ import AutoComplete from "primevue/autocomplete";
 import FloatLabel from "primevue/floatlabel";
 import Menubar from "primevue/menubar";
 import Menu from "primevue/menu";
+import Card from "primevue/card";
+import Badge from "primevue/badge";
 
 export default (app: App) => {
   app.use(PrimeVue);
@@ -19,4 +21,6 @@ export default (app: App) => {
   app.component("FloatLabel", FloatLabel);
   app.component("Menubar", Menubar);
   app.component("Menu", Menu);
+  app.component("Card", Card);
+  app.component("Badge", Badge);
 };

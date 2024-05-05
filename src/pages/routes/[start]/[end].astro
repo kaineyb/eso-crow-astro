@@ -28,10 +28,29 @@ const [route, distance] = targetToSourceToPrettyArray(cy, start, end);
 ---
 
 <Layout title="Route">
-  <div>{start} to {end}!</div>
+  <h1>
+    <a href={`/locations/${start}`}>{start}</a> to{" "}
+    <a href={`/locations/${end}`}>{end}</a>!
+  </h1>
+  {
+    distance === Infinity ? (
+      <>
+        <h2>
+          Sorry! Cannot find a route between Stonetooth Fortress and Skywatch.
+        </h2>
+        <p>
+          Route not currently possible. If you believe this to be a mistake,
+          please add an issue to the issue tracker.
+        </p>
+      </>
+    ) : (
+      <>
+        <h2>Route found in {distance} steps</h2>
+      </>
+    )
+  }
 
   <div>
-    Route found in {distance} steps
     <ul>
       {
         route.map((step) => (
