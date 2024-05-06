@@ -31,14 +31,14 @@ const { title } = Astro.props;
     />
     <title>{title} - ESO Crow</title>
   </head>
-  <Header />
 
-  <body>
+  <body
+    ><Header />
     <div class="body-container">
       <slot />
     </div>
+    <Footer />
   </body>
-  <Footer />
 
   <style is:global>
     :root {
@@ -72,9 +72,15 @@ const { title } = Astro.props;
     }
     html {
       font-family: system-ui, sans-serif;
-      background: #1d1d1d;
+      background: var(--gray-800);
       background-size: 224px;
       color: aliceblue;
+    }
+    body {
+      margin: 0px;
+      min-height: 100vh;
+      display: grid;
+      grid-template-rows: auto 1fr auto;
     }
 
     a {
@@ -101,9 +107,9 @@ const { title } = Astro.props;
     }
 
     .body-container {
-      outline: 1px solid #555;
+      /* outline: 1px solid #555; */
       padding: 20px;
-      margin: 50px 5px;
+      margin: 30px 8px;
     }
   </style>
 </html>
