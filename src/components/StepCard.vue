@@ -5,38 +5,48 @@
         :value="`Step ${step}`"
         class="badge"
       ></Badge>
-
-      <a :href="`/locations/${source}`">{{ source }}</a> to
-      <a :href="`/locations/${target}`">{{ target }}</a></template
-    >
+      <div class="title">
+        <a :href="`/locations/${source}`">{{ source }}</a> to
+        <a :href="`/locations/${target}`">{{ target }}</a>
+      </div>
+    </template>
     <template #content>
       <div>
-        From: <a :href="`/locations/${source}`">{{ source }}</a> in
-        <a
-          :href="`/zones/${getCitiesZone(source)}`"
-          :class="cssClassHash[getCityType(source)]"
-          >{{ getCitiesZone(source) }}</a
-        >
-        <img
-          :src="zoneToImg(source)"
-          class="zone-type-icon"
-          :title="typeHash[getCityType(source)]"
-        /><br />
-        To:
-        <a :href="`/locations/${target}`">{{ target }}</a> in
-        <a
-          :href="`/zones/${getCitiesZone(target)}`"
-          :class="cssClassHash[getCityType(target)]"
-          >{{ getCitiesZone(target) }}</a
-        >
-        <img
-          :src="zoneToImg(target)"
-          class="zone-type-icon"
-          :title="typeHash[getCityType(target)]"
-        /><br />
-        Via:
-        <a :href="uespURL(edgeType)">{{ edgeType }}</a
-        >: <a :href="uespURL(via)">{{ via }}</a> <br />
+        <Divider />
+        <div class="from">
+          From: <a :href="`/locations/${source}`">{{ source }}</a> in
+          <a
+            :href="`/zones/${getCitiesZone(source)}`"
+            :class="cssClassHash[getCityType(source)]"
+            >{{ getCitiesZone(source) }}</a
+          >
+          <img
+            :src="zoneToImg(source)"
+            class="zone-type-icon"
+            :title="typeHash[getCityType(source)]"
+          />
+        </div>
+        <Divider />
+        <div class="to">
+          To:
+          <a :href="`/locations/${target}`">{{ target }}</a> in
+          <a
+            :href="`/zones/${getCitiesZone(target)}`"
+            :class="cssClassHash[getCityType(target)]"
+            >{{ getCitiesZone(target) }}</a
+          >
+          <img
+            :src="zoneToImg(target)"
+            class="zone-type-icon"
+            :title="typeHash[getCityType(target)]"
+          />
+        </div>
+        <Divider />
+        <div class="via">
+          Via:
+          <a :href="uespURL(edgeType)">{{ edgeType }}</a
+          >: <a :href="uespURL(via)">{{ via }}</a> <br />
+        </div>
       </div>
     </template>
   </Card>
@@ -104,7 +114,12 @@ const props = defineProps({
 }
 
 .badge {
-  margin-right: 13px;
+  border-radius: 7px 0px;
+  position: relative;
+  top: -27px;
+  left: -24px;
+  margin-right: -48px;
+  margin-bottom: -27px;
 }
 
 .ad {
@@ -125,5 +140,9 @@ const props = defineProps({
 }
 .expansion {
   color: var(--expansion);
+}
+
+a {
+  font-weight: bold;
 }
 </style>
