@@ -1,18 +1,30 @@
 <template>
-  Footer
   <div class="container">
-    <RandomRouteVue mode="text" />
-    <a :href="conf.github"><i class="pi pi-github"></i></a>
+    <ul>
+      <li>
+        <a :href="conf.github"><i class="pi pi-github"></i></a>
+      </li>
+      <li>&copy; 2021</li>
+    </ul>
   </div>
 </template>
 <script setup>
 import conf from "../globalConfig";
-import RandomRouteVue from "./RandomRoute.vue";
 </script>
 <style scoped>
 .container {
+  background-color: var(--gray-900);
+  width: 100%;
+  margin: auto auto;
+  padding: 10px;
+  height: 100%;
+}
+
+.container ul {
+  padding-inline-start: 0;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  list-style-type: none;
+  flex-direction: row;
 }
 </style>
