@@ -28,29 +28,31 @@ const [route, distance] = targetToSourceToPrettyArray(cy, start, end);
 ---
 
 <Layout title="Route">
-  <h1>
-    <a href={`/locations/${start}`}>{start}</a> to{" "}
-    <a href={`/locations/${end}`}>{end}</a>!
-  </h1>
-  {
-    distance === Infinity ? (
-      <>
-        <h2>
-          Sorry! Cannot find a route between Stonetooth Fortress and Skywatch.
-        </h2>
-        <p>
-          Route not currently possible. If you believe this to be a mistake,
-          please add an issue to the issue tracker.
-        </p>
-      </>
-    ) : (
-      <>
-        <h2>Route found in {distance} steps</h2>
-      </>
-    )
-  }
+  <div class="route-header">
+    <h1>
+      <a href={`/locations/${start}`}>{start}</a> to{" "}
+      <a href={`/locations/${end}`}>{end}</a>
+    </h1>
+    {
+      distance === Infinity ? (
+        <div>
+          <h2>
+            Sorry! Cannot find a route between Stonetooth Fortress and Skywatch.
+          </h2>
+          <p>
+            Route not currently possible. If you believe this to be a mistake,
+            please add an issue to the issue tracker.
+          </p>
+        </div>
+      ) : (
+        <div>
+          <h2>Route found in {distance} steps</h2>
+        </div>
+      )
+    }
+  </div>
 
-  <div>
+  <div class="step-card-container">
     <ul>
       {
         route.map((step) => (
@@ -67,5 +69,22 @@ const [route, distance] = targetToSourceToPrettyArray(cy, start, end);
     </ul>
   </div>
 
-  <style scoped></style>
+  <style scoped>
+    ul {
+      /* outline: 1px solid gold; */
+      padding-inline-start: 0px;
+    }
+
+    .route-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      outline: 1px solid var(--gray-700);
+      padding: 28px;
+    }
+
+    .route-header > * {
+      /* outline: 1px solid red; */
+    }
+  </style>
 </Layout>
