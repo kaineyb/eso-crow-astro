@@ -1,5 +1,5 @@
 <template>
-  <div class="card flex justify-content-center">
+  <div class="menu-container">
     <Menu :model="items" />
   </div>
 </template>
@@ -20,3 +20,9 @@ const items = ref([
   },
 ]);
 </script>
+
+<style scoped>
+.menu-container {
+  margin: 8px;
+}
+</style>

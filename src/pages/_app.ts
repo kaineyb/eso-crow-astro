@@ -12,6 +12,7 @@ import Menubar from "primevue/menubar";
 import Menu from "primevue/menu";
 import Card from "primevue/card";
 import Badge from "primevue/badge";
+import Divider from "primevue/divider";
 
 export default (app: App) => {
   app.use(PrimeVue);
@@ -23,4 +24,5 @@ export default (app: App) => {
   app.component("Menu", Menu);
   app.component("Card", Card);
   app.component("Badge", Badge);
+  app.component("Divider", Divider);
 };
