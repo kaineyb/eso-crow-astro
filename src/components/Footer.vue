@@ -4,7 +4,8 @@
       <li>
         <a :href="conf.github"><i class="pi pi-github"></i></a>
       </li>
-      <li>&copy; 2021</li>
+      <li>&copy; 2021 - {{ new Date().getFullYear() }}</li>
+      <a href="#">top</a>
     </ul>
   </div>
 </template>

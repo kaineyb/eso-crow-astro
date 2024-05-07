@@ -1,34 +1,71 @@
 ---
+import RouteCombination from "../../components/RouteCombination.vue";
+import Sources from "../../components/Sources.vue";
 import Layout from "../../layouts/Layout.astro";
 
 import { potentialCombinations } from "../../nodes/all";
+
+const combinationMap: { [location: string]: string[] } = {};
+
+potentialCombinations.forEach((combos) => {
+  const source = combos[0];
+  const target = combos[1];
+
+  let array = combinationMap[source];
+
+  if (!array) {
+    array = [];
+    combinationMap[source] = array;
+  }
+
+  array.push(target);
+});
+
+const sortedCombinations: { [location: string]: string[] } = {};
+
+for (const key of Object.keys(combinationMap).sort((a, b) =>
+  a.localeCompare(b)
+)) {
+  combinationMap[key].sort();
+  sortedCombinations[key] = combinationMap[key];
+}
 ---
 
 <Layout title="Routes">
-  We have {potentialCombinations.length} routes!
+  <div class="route-header">
+    <h2>We have {potentialCombinations.length} routes!</h2>
+    Click a Source to jump to that Source
+  </div>
 
-  <ul>
-    <div class="routes-container">
-      {
-        potentialCombinations.map((combos) => (
-          <li>
-            <a href={`/routes/${combos[0]}/${combos[1]}`}>
-              {combos[0]} > {combos[1]}
-            </a>
-          </li>
-        ))
-      }
-      <!-- {potentialCombinations} -->
-    </div>
-  </ul>
+  <Sources sources={Object.keys(sortedCombinations)} />
+
+  {
+    Object.keys(sortedCombinations).map((key) => (
+      <div id={key}>
+        <RouteCombination
+          source={key}
+          locations={sortedCombinations[key]}
+        />
+      </div>
+    ))
+  }
 </Layout>
 
 <style scoped>
   .routes-container {
-    width: 1080px;
     margin: auto auto;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     gap: 10px;
+  }
+
+  .route-header {
+    outline: 1px solid var(--gray-500);
+    padding: 25px;
+    margin-bottom: 50px;
+  }
+
+  h2 {
+    margin-top: 0;
   }
 </style>
