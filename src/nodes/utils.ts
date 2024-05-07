@@ -106,6 +106,7 @@ const cartsAndBoats =
 
 const boatSwains = "https://en.uesp.net/wiki/Online:Boatswains";
 const caravaners = "https://en.uesp.net/wiki/Online:Caravaners";
+const baandari = "https://en.uesp.net/wiki/Online:Baandari_Caravan_Stop";
 
 const uespURLMap: { [edgeType: string]: string } = {
   Carts: cartsAndBoats,
@@ -117,6 +118,7 @@ const uespURLMap: { [edgeType: string]: string } = {
 
   Boatswain: boatSwains,
   Caravaners: caravaners,
+  "Baandari Caravan Stop": baandari,
 };
 
 export function uespURL(edgeType: string): string {

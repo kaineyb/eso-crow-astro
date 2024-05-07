@@ -9,5 +9,5 @@ const originalBaandariCaravanStop: BasicEdge[] = [
 
 export const baandariCaravanStop = generateEdgesFromBasic(
   originalBaandariCaravanStop,
-  "baandariCaravanStop"
+  "Baandari Caravan Stop"
 );
