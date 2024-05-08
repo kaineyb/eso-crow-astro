@@ -18,27 +18,42 @@ function displayZones(zones: ZoneInfo) {
 
 <Layout title="Zones">
   <main class="zones">
-    We currently have {Object.keys(zoneInfo).length} Zones
-    <div class="zone-container">
-      {
-        displayZones(zoneInfo).map((zone) => {
-          const [name, type, cities] = zone;
-          return (
-            <ZoneCard
-              zoneName={name}
-              zoneType={type}
-              cities={cities}
-            />
-          );
-        })
-      }
+    <div class="route-header">
+      <h2>We currently have {Object.keys(zoneInfo).length} Zones</h2>
     </div>
   </main>
+
+  <div class="zone-container">
+    {
+      displayZones(zoneInfo).map((zone) => {
+        const [name, type, cities] = zone;
+        return (
+          <ZoneCard
+            zoneName={name}
+            zoneType={type}
+            cities={cities}
+          />
+        );
+      })
+    }
+  </div>
 </Layout>
 
 <style scoped>
+  h2 {
+    margin: 0;
+  }
+  .route-header {
+    outline: 1px solid var(--gray-500);
+    padding: 25px;
+    margin-bottom: 50px;
+  }
   .zones {
   }
   .zone-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    /* flex-wrap: wrap; */
   }
 </style>

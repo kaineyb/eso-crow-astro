@@ -20,10 +20,22 @@ const { zone } = Astro.params;
 const { Type, Cities } = zoneInfo[zone];
 ---
 
-<Layout title={zone}>
-  <ZoneCard
-    zoneName={zone}
-    zoneType={Type}
-    cities={Cities}
-  />
+<Layout title={zone}
+  ><div class="zone-container">
+    <div class="zone-header">
+      <h2>We currently have {Cities.length} locations in {zone}</h2>
+    </div>
+    <ZoneCard
+      zoneName={zone}
+      zoneType={Type}
+      cities={Cities}
+    />
+  </div>
+  <style>
+    .zone-header {
+      outline: 1px solid var(--gray-500);
+      padding: 25px;
+      margin-bottom: 50px;
+    }
+  </style>
 </Layout>
