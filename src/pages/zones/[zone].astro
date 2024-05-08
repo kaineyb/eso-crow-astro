@@ -23,7 +23,10 @@ const { Type, Cities } = zoneInfo[zone];
 <Layout title={zone}
   ><div class="zone-container">
     <div class="zone-header">
-      <h2>We currently have {Cities.length} locations in {zone}</h2>
+      <h2>
+        We currently have {Cities.length}
+        {Cities.length !== 1 ? `locations` : "location"} in {zone}
+      </h2>
     </div>
     <ZoneCard
       zoneName={zone}
