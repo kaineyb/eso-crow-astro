@@ -6,7 +6,8 @@
 
   <Card class="card-container">
     <template #title>
-      {{ source }}
+      {{ direction === "from" ? "From" : "To" }} {{ source }}
+      {{ direction === "from" ? "to:" : "from:" }}
 
       <Divider />
     </template>
@@ -36,8 +37,8 @@ const props = defineProps<{
 const fromTitle = `${props.source}`;
 const toTitle = `Getting to ${props.source}`;
 
-const fromSubtitle = `Traveling from <strong>${props.source}</strong> you can get to the places below`;
-const toSubtitle = `You can get to <strong>${props.source}</strong>  from the places below:`;
+const fromSubtitle = `Traveling from <strong>${props.source}</strong> you can get to the places below in the listed step amount.`;
+const toSubtitle = `You can get to <strong>${props.source}</strong>  from the places below in the listed step amount.`;
 
 const subTitle = computed(() =>
   props.direction == "from" ? fromSubtitle : toSubtitle
