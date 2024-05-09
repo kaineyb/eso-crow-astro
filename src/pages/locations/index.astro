@@ -1,5 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import LocationsList from "../../components/LocationsList.vue";
 
 import { nodes } from "../../nodes/all";
 const locations = [...nodes];
@@ -8,15 +9,22 @@ locations.sort();
 
 <Layout title="Locations">
   <div>
-    We currently have {locations.length} Locations
-    {
-      locations.map((location) => (
-        <li>
-          <a href={`/locations/${location}`}>{location}</a>
-        </li>
-      ))
+    <div class="locations-header">
+      <h2>
+        We currently have {locations.length} Locations
+      </h2>
+    </div>
+    <LocationsList locations={locations} />
+  </div><style>
+    .locations-header {
+      outline: 1px solid var(--gray-500);
+      padding: 25px;
+      margin-bottom: 50px;
     }
-  </div>
+    h2 {
+      margin: 0;
+    }
+  </style>
 </Layout>
 
 <style scoped></style>
