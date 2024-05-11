@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import RandomRoute from "../components/RandomRoute.vue";
+---
+
+<Layout title="404 Not Found">
+  <main>
+    <div class="header">
+      <h1>404 - Page not found!</h1>
+      <h2>Lost in Tamriel's vast expanse?</h2>
+      <div>
+        <p>
+          Where even the most seasoned adventurers might stumble upon an
+          unexpected route.
+        </p><p>
+          While you may not have found the page you sought, consider this a
+          detour through the realms of the Elder Scrolls Online. Navigate
+          through the forgotten paths of Nirn, where each error is but a mere
+          glitch in the grand tapestry of your quest.
+        </p><p>
+          Fear not, traveler, for in the land of ESO, every dead end is a chance
+          for a new adventure. Embrace the unknown, for in its depths lies the
+          true essence of exploration. Return to your journey, adventurer, and
+          may your path be ever illuminated by the stars of Aetherius.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <style>
+    .header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      outline: 1px solid var(--gray-700);
+      padding: 28px;
+    }
+
+    p {
+      line-height: 1.8rem;
+    }
+  </style>
+</Layout>
