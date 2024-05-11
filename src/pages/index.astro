@@ -7,10 +7,50 @@ import RandomRoute from "../components/RandomRoute.vue";
 
 <Layout title="Welcome">
   <main>
+    <div class="block">
+      <h1>Tamriel Awaits...</h1>
+      <span>Please enter a Source and Destination.</span>
+    </div>
+
     <div><RouteSearch client:only="vue" /></div>
+    <div class="block bottom">
+      <span>
+        ESO Crow was created to help navigate in the <a
+          href="https://www.elderscrollsonline.com/">Elder Scrolls Online</a
+        >
+        <em>(without using wayshrines).</em>
+      </span>
+      <span>
+        This can be quite handy when you're new to the game or just starting a
+        new alt.
+      </span>
+    </div>
   </main>
+
+  <style>
+    h1 {
+      margin: 0;
+    }
+    .block {
+      /* outline: 1px solid var(--gray-500); */
+      padding: 25px;
+      margin-bottom: 20px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .bottom {
+      margin-top: 20px;
+      outline: 0;
+    }
+
+    .block > * {
+      /* outline: 1px solid red; */
+    }
+  </style>
+
+  <script></script>
 </Layout>
-
-<style></style>
-
-<script></script>
