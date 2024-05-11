@@ -1,49 +1,51 @@
 <template>
   <form
-    class="search"
+    class="container"
     :action="`/routes/${source}/${target}/`"
   >
-    <FloatLabel>
-      <AutoComplete
-        :emptySearchMessage="noSearchMsg"
-        spellcheck="false"
-        :delay="0"
-        variant="filled"
-        v-model="source"
-        forceSelection
-        dropdown
-        placeholder="Source"
-        :suggestions="sourceNodes"
-        @complete="(event) => search(event, 'source')"
-        :invalid="!sourceValid"
-      />
-      <label for="source">Source</label>
-    </FloatLabel>
+    <div class="source-target">
+      <FloatLabel>
+        <AutoComplete
+          :emptySearchMessage="noSearchMsg"
+          spellcheck="false"
+          :delay="0"
+          variant="filled"
+          v-model="source"
+          forceSelection
+          dropdown
+          placeholder="Source"
+          :suggestions="sourceNodes"
+          @complete="(event) => search(event, 'source')"
+          :invalid="!sourceValid"
+        />
+        <label for="source">Source</label>
+      </FloatLabel>
 
-    <FloatLabel>
-      <AutoComplete
-        :emptySearchMessage="noSearchMsg"
-        spellcheck="false"
-        :delay="0"
-        variant="filled"
-        v-model="target"
-        forceSelection
-        dropdown
-        placeholder="Target"
-        :suggestions="targetNodes"
-        @complete="(event) => search(event, 'target')"
-        :invalid="!targetValid"
+      <FloatLabel>
+        <AutoComplete
+          :emptySearchMessage="noSearchMsg"
+          spellcheck="false"
+          :delay="0"
+          variant="filled"
+          v-model="target"
+          forceSelection
+          dropdown
+          placeholder="Target"
+          :suggestions="targetNodes"
+          @complete="(event) => search(event, 'target')"
+          :invalid="!targetValid"
+        />
+        <label for="target">Target</label>
+      </FloatLabel>
+    </div>
+    <div class="button">
+      <Button
+        style="font-style: italic"
+        type="submit"
+        label="Fly, my pretties!"
+        :disabled="!routeValid"
       />
-      <label for="target">Target</label>
-    </FloatLabel>
-
-    <Button
-      icon="pi pi-search"
-      iconPos="right"
-      type="submit"
-      label="Fly, my pretties!"
-      :disabled="!routeValid"
-    />
+    </div>
   </form>
 </template>
 <script setup>
@@ -107,14 +109,25 @@ const search = (event, model) => {
 };
 </script>
 <style scoped>
-.search {
-  padding-top: 30px;
-  outline: 1px solid gold;
+.container {
+  /* padding-top: 30px; */
+  /* outline: 1px solid gold; */
   gap: 30px;
-  margin: 30px 30px auto auto;
   padding-left: 35px;
   padding-right: 35px;
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.source-target {
+  /* outline: 1px solid gold; */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.button {
+  /* outline: 1px solid red; */
 }
 </style>
