@@ -1,6 +1,19 @@
 <template>
   <div class="menu-container">
-    <Menu :model="items" />
+    <Menubar :model="items">
+      <template #end>
+        <div class="title-container">
+          <div>
+            <div class="title-subtitle-container">
+              <span class="title"><a href="/">ESO Crow</a></span>
+              <span class="subtitle">"As the Crow flies."</span>
+            </div>
+          </div>
+          <img
+            class="crow"
+            src="/fav/android-chrome-192x192.png"
+          /></div></template
+    ></Menubar>
   </div>
 </template>
 
@@ -24,5 +37,40 @@ const items = ref([
 <style scoped>
 .menu-container {
   margin: 8px;
+}
+
+.crow {
+  width: 50px;
+  height: 50px;
+}
+.title {
+  font-weight: 900;
+  font-size: 1.6rem;
+}
+
+.title > a {
+  color: white;
+  text-decoration: none;
+}
+
+.title > a:hover {
+  text-decoration: underline;
+}
+
+.subtitle {
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.title-container {
+  display: flex;
+  gap: 0rem;
+}
+
+.title-subtitle-container {
+  padding: 2px;
+  display: flex;
+  flex-direction: column;
 }
 </style>
