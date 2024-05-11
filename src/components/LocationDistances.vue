@@ -5,29 +5,51 @@
   </div>
 
   <Card class="card-container">
-    <template #title>
-      {{ direction === "from" ? "From" : "To" }} {{ source }}
-      {{ direction === "from" ? "to:" : "from:" }}
-
-      <Divider />
-    </template>
-    <template #content>
-      <div class="locations-container">
-        <div v-for="result in results">
-          <a :href="link(source, result.target)">{{ result.target }}</a>
-          <Badge
-            class="badge"
-            :value="`${result.distance} Steps`"
-          ></Badge>
-        </div>
-      </div>
-    </template>
+    ><template #title
+      >{{ direction === "from" ? "From" : "To" }} {{ source }}
+      {{ direction === "from" ? "to:" : "from:" }}<Divider /></template
+    ><template #content>
+      <DataTable
+        paginator
+        :rows="10"
+        :rowsPerPageOptions="[5, 10, 20, 50]"
+        paginatorTemplate="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink RowsPerPageDropdown"
+        currentPageReportTemplate="{first} to {last} of {totalRecords}"
+        stripedRows
+        size="small"
+        :value="results"
+        tableStyle=""
+      >
+        <Column
+          field="distance"
+          header="Steps"
+          sortable
+          style="width: 5%"
+        >
+          <template #body="{ data }">
+            <Badge
+              class="badge"
+              :value="`${data.distance} Steps`"
+            ></Badge> </template
+        ></Column>
+        <Column
+          style="width: 50%"
+          header="Location"
+          sortable
+          field="target"
+        >
+          <template #body="{ data }">
+            <a :href="`/routes/${source}/${data.target}`">{{ data.target }}</a>
+          </template>
+        </Column></DataTable
+      ></template
+    >
   </Card>
 </template>
 
 <script setup lang="ts">
 import type { LocationDistances } from "../nodes/graph";
-import { computed } from "vue";
+import { computed, ref } from "vue";
 const props = defineProps<{
   direction: string;
   source: string;

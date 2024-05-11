@@ -13,6 +13,8 @@ import Menu from "primevue/menu";
 import Card from "primevue/card";
 import Badge from "primevue/badge";
 import Divider from "primevue/divider";
+import DataTable from "primevue/datatable";
+import Column from "primevue/column";
 
 export default (app: App) => {
   app.use(PrimeVue);
@@ -25,4 +27,6 @@ export default (app: App) => {
   app.component("Card", Card);
   app.component("Badge", Badge);
   app.component("Divider", Divider);
+  app.component("DataTable", DataTable);
+  app.component("Column", Column);
 };
