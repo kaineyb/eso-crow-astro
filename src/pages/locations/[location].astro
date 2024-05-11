@@ -22,12 +22,14 @@ const to = allToSource(cy, location);
 
 <Layout title={location}>
   <LocationDistances
+    client:only
     direction="from"
     source={location}
     results={from}
   />
 
   <LocationDistances
+    client:only
     direction="to"
     source={location}
     results={to}
