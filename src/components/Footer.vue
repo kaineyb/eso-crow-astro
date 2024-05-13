@@ -9,11 +9,13 @@
         /></a>
       </li>
       <li>&copy; 2021 - {{ new Date().getFullYear() }}</li>
-      <a
-        href="#"
-        aria-label="to the top"
-        ><i class="pi pi-arrow-up"
-      /></a>
+      <li>
+        <a
+          href="#"
+          aria-label="to the top"
+          ><i class="pi pi-arrow-up"
+        /></a>
+      </li>
     </ul>
   </div>
 </template>
