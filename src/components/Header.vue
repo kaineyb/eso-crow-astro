@@ -12,7 +12,7 @@
           <img
             alt="Image of a crow facing right, whilst looking over his shoulder"
             class="crow"
-            src="/fav/android-chrome-192x192.png"
+            src="/fav/eso-crow-50x50.png"
           /></div></template
     ></Menubar>
   </div>
