@@ -10,6 +10,7 @@
             </div>
           </div>
           <img
+            alt="Image of a crow facing right, whilst looking over his shoulder"
             class="crow"
             src="/fav/android-chrome-192x192.png"
           /></div></template
@@ -60,7 +61,7 @@ const items = ref([
 .subtitle {
   font-style: italic;
   font-size: 0.8rem;
-  color: var(--gray-500);
+  color: var(--gray-300);
 }
 
 .title-container {

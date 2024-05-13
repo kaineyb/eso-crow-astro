@@ -53,26 +53,24 @@ const [route, distance] = targetToSourceToPrettyArray(cy, start, end);
   </div>
 
   <div class="step-card-container">
-    <ul>
-      {
-        route.map((step) => (
-          <StepCard
-            step={step.step}
-            edge={step.edge}
-            source={step.source}
-            target={step.target}
-            via={step.via}
-            edgeType={step.edgeType}
-          />
-        ))
-      }
-    </ul>
+    {
+      route.map((step) => (
+        <StepCard
+          step={step.step}
+          edge={step.edge}
+          source={step.source}
+          target={step.target}
+          via={step.via}
+          edgeType={step.edgeType}
+        />
+      ))
+    }
   </div>
 
   <style scoped>
-    ul {
+    .step-card-container {
       /* outline: 1px solid gold; */
-      padding-inline-start: 0px;
+      margin-top: 30px;
     }
 
     .route-header {
