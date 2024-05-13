@@ -2,10 +2,18 @@
   <div class="container">
     <ul>
       <li>
-        <a :href="conf.github"><i class="pi pi-github"></i></a>
+        <a
+          :href="conf.github"
+          aria-label="github"
+          ><i class="pi pi-github"
+        /></a>
       </li>
       <li>&copy; 2021 - {{ new Date().getFullYear() }}</li>
-      <a href="#">top</a>
+      <a
+        href="#"
+        aria-label="to the top"
+        ><i class="pi pi-arrow-up"
+      /></a>
     </ul>
   </div>
 </template>
@@ -27,5 +35,14 @@ import conf from "../globalConfig";
   justify-content: space-between;
   list-style-type: none;
   flex-direction: row;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container a:hover {
+  /* color: aqua; */
+  text-decoration: underline;
 }
 </style>
