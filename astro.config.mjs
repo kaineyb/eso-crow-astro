@@ -5,7 +5,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://eso-crow-astro.pages.dev", // Mainly for sitemap
+  site: "https://esocrow.com/", // Mainly for sitemap
   integrations: [
     vue({
       appEntrypoint: "/src/pages/_app",
