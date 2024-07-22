@@ -24,9 +24,9 @@ import { ref } from "vue";
 
 const items = ref([
   { label: "Home", icon: "pi pi-home", url: "/" },
-  { label: "Locations", icon: "pi pi-map-marker", url: "/locations" },
-  { label: "Zones", icon: "pi pi-map", url: "/zones" },
-  { label: "Routes", icon: "pi pi-directions", url: "/routes" },
+  { label: "Locations", icon: "pi pi-map-marker", url: "/locations/" },
+  { label: "Zones", icon: "pi pi-map", url: "/zones/" },
+  { label: "Routes", icon: "pi pi-directions", url: "/routes/" },
   {
     label: "Random Route",
     icon: "pi pi-sparkles",

@@ -6,17 +6,17 @@
         class="badge"
       ></Badge>
       <div class="title">
-        <a :href="`/locations/${source}`">{{ source }}</a> to
-        <a :href="`/locations/${target}`">{{ target }}</a>
+        <a :href="`/locations/${source}/`">{{ source }}</a> to
+        <a :href="`/locations/${target}/`">{{ target }}</a>
       </div>
     </template>
     <template #content>
       <div>
         <Divider />
         <div class="from">
-          From: <a :href="`/locations/${source}`">{{ source }}</a> in
+          From: <a :href="`/locations/${source}/`">{{ source }}</a> in
           <a
-            :href="`/zones/${getCitiesZone(source)}`"
+            :href="`/zones/${getCitiesZone(source)}/`"
             :class="cssClassHash[getCityType(source)]"
             >{{ getCitiesZone(source) }}</a
           >
@@ -29,9 +29,9 @@
         <Divider />
         <div class="to">
           To:
-          <a :href="`/locations/${target}`">{{ target }}</a> in
+          <a :href="`/locations/${target}/`">{{ target }}</a> in
           <a
-            :href="`/zones/${getCitiesZone(target)}`"
+            :href="`/zones/${getCitiesZone(target)}/`"
             :class="cssClassHash[getCityType(target)]"
             >{{ getCitiesZone(target) }}</a
           >

@@ -2,7 +2,7 @@
   <Card class="zone">
     <template #title>
       <div :class="`slanted-edge ${zoneType}`">
-        <a :href="`/zones/${zoneName}`">{{ zoneName }}</a>
+        <a :href="`/zones/${zoneName}/`">{{ zoneName }}</a>
         <!-- <span :class="zoneType">{{ zoneType }}</span> -->
         <!-- <img
           :src="zoneToImg(zoneType)"
@@ -16,7 +16,7 @@
     <template #content>
       <div class="zone-container">
         <div v-for="city in cities.sort()">
-          <a :href="`/locations/${city}`">{{ city }}</a>
+          <a :href="`/locations/${city}/`">{{ city }}</a>
         </div>
       </div>
     </template>
