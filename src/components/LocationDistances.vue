@@ -39,7 +39,7 @@
           field="target"
         >
           <template #body="{ data }">
-            <a :href="`/routes/${source}/${data.target}`">{{ data.target }}</a>
+            <a :href="`/routes/${source}/${data.target}/`">{{ data.target }}</a>
           </template>
         </Column></DataTable
       ></template

@@ -30,8 +30,8 @@ const [route, distance] = targetToSourceToPrettyArray(cy, start, end);
 <Layout title="Route">
   <div class="route-header">
     <h1>
-      <a href={`/locations/${start}`}>{start}</a> to{" "}
-      <a href={`/locations/${end}`}>{end}</a>
+      <a href={`/locations/${start}/`}>{start}</a> to{" "}
+      <a href={`/locations/${end}/`}>{end}</a>
     </h1>
     {
       distance === Infinity ? (

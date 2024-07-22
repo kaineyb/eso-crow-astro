@@ -7,7 +7,7 @@
     <template #content>
       <div class="locations-container">
         <div v-for="location of locations">
-          <a :href="`/locations/${location}`">{{ location }}</a>
+          <a :href="`/locations/${location}/`">{{ location }}</a>
         </div>
       </div>
     </template>

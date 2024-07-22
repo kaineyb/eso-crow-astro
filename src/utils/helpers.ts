@@ -22,5 +22,5 @@ export function generateRoute(): string {
     if (node != sourceNode) targetNode = node;
   }
 
-  return `/routes/${sourceNode}/${targetNode}`;
+  return `/routes/${sourceNode}/${targetNode}/`;
 }
